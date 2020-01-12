@@ -21,6 +21,8 @@
 		5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE023CA905D00BA1627 /* SearchData.swift */; };
 		5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE223CA921C00BA1627 /* SearchParser.swift */; };
 		5EE84CE523CA941700BA1627 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE84CE423CA941700BA1627 /* search.json */; };
+		5EE84CE723CAC61300BA1627 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */; };
+		5EE84CE923CB023F00BA1627 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		5EE84CE023CA905D00BA1627 /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		5EE84CE223CA921C00BA1627 /* SearchParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParser.swift; sourceTree = "<group>"; };
 		5EE84CE423CA941700BA1627 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = search.json; path = testFiles/search.json; sourceTree = SOURCE_ROOT; };
+		5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				5EE84CA923CA50A200BA1627 /* AppDelegate.swift */,
 				5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */,
 				5EE84CAD23CA50A200BA1627 /* ViewController.swift */,
+				5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */,
+				5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */,
 				5EE84CE023CA905D00BA1627 /* SearchData.swift */,
 				5EE84CE223CA921C00BA1627 /* SearchParser.swift */,
 				5EE84CDC23CA7F9100BA1627 /* URLBuilder.swift */,
@@ -156,6 +162,7 @@
 				5EE84CA223CA50A200BA1627 /* Sources */,
 				5EE84CA323CA50A200BA1627 /* Frameworks */,
 				5EE84CA423CA50A200BA1627 /* Resources */,
+				5EE84CEA23CB05B000BA1627 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -273,6 +280,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5EE84CEA23CB05B000BA1627 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5EE84CA223CA50A200BA1627 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,8 +308,10 @@
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,
 				5EE84CDD23CA7F9100BA1627 /* URLBuilder.swift in Sources */,
 				5EE84CAE23CA50A200BA1627 /* ViewController.swift in Sources */,
+				5EE84CE723CAC61300BA1627 /* AnswerViewController.swift in Sources */,
 				5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */,
 				5EE84CDF23CA820A00BA1627 /* NetworkController.swift in Sources */,
+				5EE84CE923CB023F00BA1627 /* QuestionViewController.swift in Sources */,
 				5EE84CAA23CA50A200BA1627 /* AppDelegate.swift in Sources */,
 				5EE84CB423CA50A200BA1627 /* StackOverflowProject.xcdatamodeld in Sources */,
 				5EE84CAC23CA50A200BA1627 /* SceneDelegate.swift in Sources */,

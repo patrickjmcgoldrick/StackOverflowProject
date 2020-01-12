@@ -41,8 +41,8 @@ class StackOverflowProjectTests: XCTestCase {
             
             let parser = SearchParser()
             parser.parse(data: data) { (searchData) in
-                                
-                XCTAssertTrue(searchData.items?.count == 3)
+
+                XCTAssertTrue(searchData.items.count == 8, "Expected 8 rows, but found \(searchData.items.count) rows.")
                 
                 expectation.fulfill()
             }

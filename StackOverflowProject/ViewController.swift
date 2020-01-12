@@ -9,33 +9,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var searchView: UISearchBar!
     
-    
     @IBOutlet weak var tableView: UITableView!
     
-    
     let urlBuilder = URLBuilder()
-    let fakeData = ["patrick", "ryan", "salma"]
+    var questions = [Question]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
         
-        let url = urlBuilder.getSearchURL(searchTerm: "swift DispatchGroup")
+        let url = urlBuilder.getSearchURL(searchTerm: "swift push notifications")
         
         let network = NetworkController()
         network.loadData(urlString: url) { (data) in
-            
+                        
             print(String(data: data, encoding: .utf8)!)
             
             let parser = SearchParser()
             parser.parse(data: data) { (searchData) in
                 
-                print(searchData.items?[0].title) //items[0].title)
+                self.questions = searchData.items
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -44,19 +46,35 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return fakeData.count
+        return questions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell") as? UITableViewCell else { return UITableViewCell() }
         
-        cell.textLabel?.text = fakeData[indexPath.row]
+        let question = questions[indexPath.row]
+        cell.textLabel?.text = question.title
         
         return cell
     }
-    
-    
-    
 }
 
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                    
+        performSegue(withIdentifier: "toAnswers", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ 
+        if let destination = segue.destination as? QuestionViewController {
+            
+            if let row = tableView.indexPathForSelectedRow?.row {
+            
+                destination.questionURL = questions[row].link
+            }
+        }
+    }
+}

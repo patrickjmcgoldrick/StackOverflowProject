@@ -12,6 +12,8 @@ class URLBuilder {
 
     let searchURL = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle="
 
+    let answerURL = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle="
+
     func getSearchURL(searchTerm: String) -> String {
         
         let encodedString = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!

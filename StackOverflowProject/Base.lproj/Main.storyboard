@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zSV-u4-klV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Xr-Q6-QhG">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="4nd-vq-2Dm">
@@ -30,7 +30,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3Je-98-kwP">
-                                <rect key="frame" x="0.0" y="44" width="394" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="394" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -46,14 +46,69 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PCi-7t-Km8"/>
                     <connections>
                         <outlet property="searchView" destination="3Je-98-kwP" id="52p-FS-9Hq"/>
                         <outlet property="tableView" destination="3Xr-Q6-QhG" id="0tl-dF-NmF"/>
+                        <segue destination="5jQ-Je-mQm" kind="show" identifier="toAnswers" id="6Zr-kZ-YNS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="81"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="80.357142857142847"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="9nE-KU-Rnn">
+            <objects>
+                <viewController id="5jQ-Je-mQm" customClass="QuestionViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xpq-4y-PP0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOP-qE-ddu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BOP-qE-ddu" firstAttribute="top" secondItem="MwU-7Z-eux" secondAttribute="top" id="6Ut-P2-s4T"/>
+                            <constraint firstItem="MwU-7Z-eux" firstAttribute="bottom" secondItem="BOP-qE-ddu" secondAttribute="bottom" id="JPb-hi-muo"/>
+                            <constraint firstItem="MwU-7Z-eux" firstAttribute="trailing" secondItem="BOP-qE-ddu" secondAttribute="trailing" id="KAZ-1a-hS2"/>
+                            <constraint firstItem="BOP-qE-ddu" firstAttribute="leading" secondItem="MwU-7Z-eux" secondAttribute="leading" id="Kzz-WI-cfX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MwU-7Z-eux"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oqx-F1-C4H"/>
+                    <connections>
+                        <outlet property="webKit" destination="BOP-qE-ddu" id="nFZ-hh-ZIv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVK-ZP-aDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U2R-sD-WUe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zSV-u4-klV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rdb-Vw-zi8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Djs-tk-zUp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1E-dC-tZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="80.357142857142847"/>
         </scene>
     </scenes>
 </document>

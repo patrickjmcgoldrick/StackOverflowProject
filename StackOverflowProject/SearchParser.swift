@@ -24,7 +24,6 @@ class SearchParser {
                 let searchData = try jsonDecoder.decode(SearchData.self, from: data)
                 
                 parsed(searchData)
-                
             } catch {
                 print("Error Parsing JSON: \(error.localizedDescription)")
             }

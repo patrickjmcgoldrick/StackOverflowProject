@@ -9,10 +9,12 @@
 import Foundation
 
 struct SearchData: Codable {
-    var items: [Result]?
+    var items: [Question]
 }
 
-struct Result: Codable {
-    //var question_id: String?
-    var title: String?
+struct Question: Codable {
+    var question_id: Int
+    var accepted_answer_id: Int?
+    var title: String
+    var link: String
 }
