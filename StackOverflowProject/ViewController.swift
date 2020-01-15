@@ -26,10 +26,8 @@ class ViewController: UIViewController {
         let url = urlBuilder.getSearchURL(searchTerm: "swift push notifications")
         
         let network = NetworkController()
-        network.loadData(urlString: url) { (data) in
-                        
-            print(String(data: data, encoding: .utf8)!)
-            
+        network.getData(urlString: url) { (data) in
+                                    
             let parser = SearchParser()
             parser.parse(data: data) { (searchData) in
                 

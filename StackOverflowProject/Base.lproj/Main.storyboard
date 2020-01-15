@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zSV-u4-klV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfy-3J-94G">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Xr-Q6-QhG">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="4nd-vq-2Dm">
@@ -30,7 +30,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3Je-98-kwP">
-                                <rect key="frame" x="0.0" y="88" width="394" height="56"/>
+                                <rect key="frame" x="0.0" y="56" width="394" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -62,11 +62,11 @@
             <objects>
                 <viewController id="5jQ-Je-mQm" customClass="QuestionViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xpq-4y-PP0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOP-qE-ddu">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -92,13 +92,58 @@
             </objects>
             <point key="canvasLocation" x="1962" y="80"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="HGB-r3-31T">
+            <objects>
+                <viewController id="vfy-3J-94G" customClass="LoginViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="umZ-T7-DjU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAu-To-5NA">
+                                <rect key="frame" x="0.0" y="158" width="414" height="704"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzN-0d-iT7">
+                                <rect key="frame" x="134" y="76" width="146" height="30"/>
+                                <state key="normal" title="Login Stack Overflow"/>
+                                <connections>
+                                    <action selector="btnActionLogin:" destination="vfy-3J-94G" eventType="touchUpInside" id="3SW-N4-RHQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gzN-0d-iT7" firstAttribute="centerX" secondItem="umZ-T7-DjU" secondAttribute="centerX" id="1fX-W0-UuA"/>
+                            <constraint firstItem="dAu-To-5NA" firstAttribute="top" secondItem="gzN-0d-iT7" secondAttribute="bottom" constant="52" id="54g-Xg-exN"/>
+                            <constraint firstItem="lHE-Np-m93" firstAttribute="trailing" secondItem="dAu-To-5NA" secondAttribute="trailing" id="Rnt-tw-JUe"/>
+                            <constraint firstItem="lHE-Np-m93" firstAttribute="bottom" secondItem="dAu-To-5NA" secondAttribute="bottom" id="T7L-me-uDr"/>
+                            <constraint firstItem="gzN-0d-iT7" firstAttribute="top" secondItem="lHE-Np-m93" secondAttribute="top" constant="32" id="WFc-du-yij"/>
+                            <constraint firstItem="dAu-To-5NA" firstAttribute="leading" secondItem="lHE-Np-m93" secondAttribute="leading" id="gww-kL-Qlg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lHE-Np-m93"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="dAu-To-5NA" id="ce9-Pn-vYT"/>
+                        <segue destination="zSV-u4-klV" kind="show" identifier="loginToSearch" id="QYg-Kp-FSe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVT-eS-NTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-837.68115942028987" y="75"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="U2R-sD-WUe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zSV-u4-klV" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="X1Y-Mi-LpJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rdb-Vw-zi8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
