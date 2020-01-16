@@ -25,6 +25,7 @@ class QuestionViewController: UIViewController {
         let urlBuilder = URLBuilder()
         guard let questionId = questionId else { return }
         let urlString = urlBuilder.getQuestionURL(questionId: questionId)
+        print(urlString)
         
         NetworkManager.shared.getData(urlString: urlString) { (data) in
             
@@ -50,7 +51,7 @@ class QuestionViewController: UIViewController {
 extension QuestionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

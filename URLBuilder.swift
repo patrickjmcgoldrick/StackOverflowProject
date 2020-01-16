@@ -10,6 +10,7 @@ import UIKit
 
 class URLBuilder {
 
+    // MARK: Base URLs
     let loginPageURL = "https://stackoverflow.com/oauth/dialog"
     
     let actualLoginURL = "https://stackoverflow.com/users/login"
@@ -21,10 +22,11 @@ class URLBuilder {
     let answerURL = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle="
 
     
+    // MARK: functions LOGIN URLs
     // build up OAUTH 2.0 Login URL for StackOverflow
-    func getLoginPageURL(clientId: String) -> String {
+    func getLoginPageURL() -> String {
         
-        let client_id = "client_id=\(clientId)"
+        let client_id = "client_id=\(APIKeys.StackOverflow.client_id)"
         let scope = "&scope=read_inbox,private_info"
         
         //let scope = "&scope=read_inbox,write_access,private_info"
@@ -36,31 +38,19 @@ class URLBuilder {
         return "\(loginPageURL)?\(encodedString)"
     }
     
-    
-    
-    // build up OAUTH 2.0 Login URL for StackOverflow
-    func getActualLoginURL(clientId: String) -> String {
-        
-        let client_id = "client_id=\(clientId)"
-        let scope = "&scope=read_inbox,private_info"
-        
-        //let scope = "&scope=read_inbox,write_access,private_info"
-
-        let redirect_uri = "&redirect_uri= https://stackexchange.com/oauth/login_success"
-        
-        let paramString = client_id + scope + redirect_uri
-        // encode url params
-        let encodedString = paramString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        return "\(actualLoginURL)?\(encodedString)"
-    }
-    
+    // MARK: Data URLs
     func getSearchURL(searchTerm: String) -> String {
         
         guard let encodedString = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return "" }
-        return "\(searchURL)\(encodedString)"
+        return "\(searchURL)\(encodedString)\(generateAuthorizationParams())"
     }
     
     func getQuestionURL(questionId: Int) -> String {
-        return "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow"
+        return "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow\(generateAuthorizationParams())"
+    }
+    
+    // MARK: Authorized Params Helper
+    func generateAuthorizationParams() -> String {
+        return "&client_id=\(APIKeys.StackOverflow.client_id)&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
     }
 }

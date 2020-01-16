@@ -10,6 +10,9 @@ import Foundation
 
 struct SearchData: Codable {
     var items: [Question]
+    var has_more: Bool
+    var quota_max: Int
+    var quota_remaining: Int
 }
 
 struct Question: Codable {

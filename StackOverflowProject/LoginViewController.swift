@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     
     var accessToken: String?
     
+    // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,17 +26,16 @@ class LoginViewController: UIViewController {
         
         let urlBulder = URLBuilder()
         
-        let urlString = urlBulder.getLoginPageURL(clientId: APIKeys.StackOverflow.client_id)
+        let urlString = urlBulder.getLoginPageURL()
         
         guard let url = URL(string: urlString) else { return }
 
         let request = URLRequest(url: url)
         webView.load(request)
-        //webKit.allowsBackForwardNavigationGestures = true
-        //webKit.allowsLinkPreview = true
     }
 }
 
+// MARK: Navigation Delegate
 extension LoginViewController: WKNavigationDelegate {
 
     /// Delegate being used to catch URLs
@@ -57,7 +57,10 @@ extension LoginViewController: WKNavigationDelegate {
                 let trailingElements = leadElement.split(separator: "&")
             let finalElements = trailingElements[0].split(separator: "=")
 
-                accessToken = String(finalElements[1])
+                let access_token = String(finalElements[1])
+                
+                Session.shared.accessToken = access_token
+                print("access_token=\(access_token)")
                 performSegue(withIdentifier: "loginToSearch", sender: self)
             }
         }

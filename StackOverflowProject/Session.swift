@@ -16,6 +16,6 @@ class Session {
     static let shared = Session()
     private init() {}
     
-    var accessToken: String?
+    var accessToken = ""
     
 }

@@ -83,8 +83,12 @@ disabled_rules:
 identifier_name:
   excluded:
     - client_id
+    - access_token
     - question_id
     - accepted_answer_id
+    - has_more
+    - quota_max
+    - quota_remaining
 number_separator:
   minimum_length: 5
 file_name:

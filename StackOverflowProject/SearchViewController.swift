@@ -25,10 +25,10 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         searchView.delegate = self
         
-        //let network = NetworkManager.shared
+        /* //let network = NetworkManager.shared
         NetworkManager.getRecentQuestions(fromDate: dateToInt( Date()), toDate: dateToInt(Date()) + 86400) { (date, error) in
             
-        }
+        } */
     }
     
     func dateToInt(_ date: Date) -> Int {
@@ -100,10 +100,12 @@ extension SearchViewController: UISearchBarDelegate {
     func search(_ searchText: String) {
         
        let url = urlBuilder.getSearchURL(searchTerm: searchText)
-        
+        print("URL: \(url)")
         let network = NetworkManager.shared
         network.getData(urlString: url) { (data) in
-                                    
+                     
+            print(String(data: data, encoding: .utf8)!)
+            
             let parser = SearchParser()
             parser.parse(data: data) { (searchData) in
                 
