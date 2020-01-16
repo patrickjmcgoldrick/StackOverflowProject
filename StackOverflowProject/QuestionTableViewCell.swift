@@ -11,7 +11,6 @@ import WebKit
 
 class QuestionTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var lblBody: UILabel!
     
     @IBOutlet weak var webView: WKWebView!
@@ -26,5 +25,4 @@ class QuestionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

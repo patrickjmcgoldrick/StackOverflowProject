@@ -39,14 +39,13 @@ class NetworkManager {
                            "sort": "activity",
                            "site": "stackoverflow",
                            "filter": "!9X(-vwYGT"]
-        
-        
+
         NetworkManager.makeRequest(url: API.baseURL!, appendingPath: pathParams, queries: queryParams) { (data, errors) in
             // do nothing for now
         }
     }
     
-    static func makeRequest(method: String = "GET", url: URL, appendingPath: [String], queries: [String:String] = [:], completion: @escaping (Data?, Error?) -> Void) {
+    static func makeRequest(method: String = "GET", url: URL, appendingPath: [String], queries: [String: String] = [:], completion: @escaping (Data?, Error?) -> Void) {
         
         var url = url
         for path in appendingPath {

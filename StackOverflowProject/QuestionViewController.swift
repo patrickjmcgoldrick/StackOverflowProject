@@ -55,10 +55,7 @@ extension QuestionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        print( indexPath.row)
-        print(question?.title)
-        
+                
         if let post = question, let body = post.body {
             print("Body: \(body)")
             if indexPath.row == 0 {
@@ -67,8 +64,8 @@ extension QuestionViewController: UITableViewDataSource {
                 print("setting up label")
                 cell.lblBody.text = body.html2String
                 return cell
-                
             } else {
+                
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionWebCell") as? QuestionTableViewCell
                     else { return UITableViewCell() }
                 print("setting up webview")
@@ -77,7 +74,6 @@ extension QuestionViewController: UITableViewDataSource {
                 return cell
             }
         }
-        
         return UITableViewCell()
     }
 }
