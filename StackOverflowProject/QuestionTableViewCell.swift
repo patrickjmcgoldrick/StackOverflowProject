@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import WebKit
 
 class QuestionTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var lblBody: UILabel!
     
+    @IBOutlet weak var webView: WKWebView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

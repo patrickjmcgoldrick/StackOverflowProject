@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class QuestionViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var questionId: Int?
@@ -27,13 +27,13 @@ class QuestionViewController: UIViewController {
         let urlString = urlBuilder.getQuestionURL(questionId: questionId)
         
         NetworkManager.shared.getData(urlString: urlString) { (data) in
-
+            
             let parser = SearchParser()
             parser.parse(data: data) { (questionData) in
                 
                 if questionData.items.count > 0 {
                     self.populateUI(questionData.items[0])
-                }
+               }
             }
         }
     }
@@ -50,18 +50,33 @@ class QuestionViewController: UIViewController {
 extension QuestionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
-            else { return UITableViewCell() }
+        print( indexPath.row)
+        print(question?.title)
         
-        if let post = question {
-            cell.lblBody.text = post.body?.html2String
+        if let post = question, let body = post.body {
+            print("Body: \(body)")
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
+                    else { return UITableViewCell() }
+                print("setting up label")
+                cell.lblBody.text = body.html2String
+                return cell
+                
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionWebCell") as? QuestionTableViewCell
+                    else { return UITableViewCell() }
+                print("setting up webview")
+
+                cell.webView.loadHTMLString(body, baseURL: URL(string: "https://api.stackexchange.com/")!)
+                return cell
+            }
         }
         
-        return cell
+        return UITableViewCell()
     }
 }

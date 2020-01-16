@@ -69,29 +69,59 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" rowHeight="105" id="KdZ-E8-xhH" customClass="QuestionTableViewCell" customModule="StackOverflowProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" rowHeight="53" id="KdZ-E8-xhH" customClass="QuestionTableViewCell" customModule="StackOverflowProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KdZ-E8-xhH" id="cLL-BL-3Uq">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27b-RD-BUl">
-                                                    <rect key="frame" x="20" y="11" width="374" height="83"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="27b-RD-BUl" secondAttribute="bottom" id="2Qp-O0-plE"/>
                                                 <constraint firstItem="27b-RD-BUl" firstAttribute="leading" secondItem="cLL-BL-3Uq" secondAttribute="leadingMargin" id="369-Fj-zyj"/>
                                                 <constraint firstItem="27b-RD-BUl" firstAttribute="top" secondItem="cLL-BL-3Uq" secondAttribute="topMargin" id="4fC-Bn-lNQ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="27b-RD-BUl" secondAttribute="bottom" id="hZt-W4-V8S"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="27b-RD-BUl" secondAttribute="trailing" id="wGC-bU-yV7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblBody" destination="27b-RD-BUl" id="UCm-Mp-I8s"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionWebCell" rowHeight="107" id="hpg-BU-AwC" customClass="QuestionTableViewCell" customModule="StackOverflowProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="81" width="414" height="107"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hpg-BU-AwC" id="poF-Xg-tfP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzU-NL-SWn">
+                                                    <rect key="frame" x="20" y="11" width="374" height="85"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="Qe5-Bj-l5i"/>
+                                                    </constraints>
+                                                    <wkWebViewConfiguration key="configuration">
+                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                        <wkPreferences key="preferences"/>
+                                                    </wkWebViewConfiguration>
+                                                </wkWebView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TzU-NL-SWn" secondAttribute="trailing" id="5Ca-PV-lWR"/>
+                                                <constraint firstItem="TzU-NL-SWn" firstAttribute="top" secondItem="poF-Xg-tfP" secondAttribute="topMargin" id="5Eo-Hy-EFB"/>
+                                                <constraint firstItem="TzU-NL-SWn" firstAttribute="bottom" secondItem="poF-Xg-tfP" secondAttribute="bottomMargin" id="eff-cD-d1Q"/>
+                                                <constraint firstItem="TzU-NL-SWn" firstAttribute="leading" secondItem="poF-Xg-tfP" secondAttribute="leadingMargin" id="sg9-cD-g9b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="webView" destination="TzU-NL-SWn" id="WMt-lG-kDG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
