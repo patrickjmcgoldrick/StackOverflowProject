@@ -16,6 +16,8 @@ class URLBuilder {
     
     let searchURL = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle="
 
+    let questionURL = "https://api.stackexchange.com/2.2/questions/" 
+    
     let answerURL = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle="
 
     
@@ -54,7 +56,11 @@ class URLBuilder {
     
     func getSearchURL(searchTerm: String) -> String {
         
-        let encodedString = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        guard let encodedString = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return "" }
         return "\(searchURL)\(encodedString)"
+    }
+    
+    func getQuestionURL(questionId: Int) -> String {
+        return "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow"
     }
 }

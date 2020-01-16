@@ -17,4 +17,5 @@ struct Question: Codable {
     var accepted_answer_id: Int?
     var title: String
     var link: String
+    var body: String?
 }
