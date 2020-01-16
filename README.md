@@ -29,3 +29,9 @@
 * Could contain animations.
 * Use an objective-C Class with a bridging header.
 * Should include sounds and haptics.
+
+
+# Notes on API use
+* https://api.stackexchange.com/2.2/answers/59741612?order=desc&filter=!b1MMEAHHviRpJX&sort=activity&site=stackoverflow
+
+* https://api.stackexchange.com/2.2/questions?fromdate=86400&filter=!9Z(-wwYGT&sort=activity&todate=1579117336&order=desc&site=stackoverflow
