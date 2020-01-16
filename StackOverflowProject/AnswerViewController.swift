@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AnswerViewController.swift
 //  StackOverflowProject
 //
 //  Created by dirtbag on 1/11/20.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AnswerViewController: UIViewController {
 
+    var answerId: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
 }
-

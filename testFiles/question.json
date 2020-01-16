@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "tags": [
+        "swift",
+        "oauth-2.0"
+      ],
+      "owner": {
+        "reputation": 893,
+        "user_id": 2452063,
+        "user_type": "registered",
+        "accept_rate": 33,
+        "profile_image": "https://www.gravatar.com/avatar/6598aa4df3903f64972510718151be4f?s=128&d=identicon&r=PG",
+        "display_name": "HH887",
+        "link": "https://stackoverflow.com/users/2452063/hh887"
+      },
+      "is_answered": false,
+      "view_count": 541,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1495431383,
+      "creation_date": 1482114635,
+      "question_id": 41215025,
+      "link": "https://stackoverflow.com/questions/41215025/swift-oauth2-p2",
+      "title": "Swift OAuth2 p2",
+      "body": "<p>I've been trying for a while to get oauth2 to work with Untappd api (<a href=\"https://untappd.com/api/docs#authentication\" rel=\"nofollow noreferrer\">https://untappd.com/api/docs#authentication</a>) and have been running into dead ends with a few different oauth2 frameworks.  </p>\n\n<p>I've been trying P2 OAuth.  I seem to be able to kick off the auth process, user signs in, I get a code back and run into trouble sending that code back to untappd for a token.  I've been going off of the example from P2 oauth: </p>\n\n<pre><code>class ViewController: UIViewController {\n\nfileprivate var alamofireManager: SessionManager?\n\nvar loader: OAuth2DataLoader?\n\nvar oauth2 = OAuth2CodeGrantNoTokenType(settings: [\n    \"client_id\": \"A0******************\",\n    \"client_secret\": \"BA******************\",\n    \"authorize_uri\": \"https://untappd.com/oauth/authenticate\",\n    \"token_uri\": \"https://untappd.com/oauth/authorize\",   \n    \"redirect_uris\": [\"****://oauthcallback\"], \n    \"response_type\": \"code\",\n    \"secret_in_body\": false,\n    \"keychain\": true,\n] as OAuth2JSON)\n\n@IBOutlet var imageView: UIImageView?\n@IBOutlet var signInEmbeddedButton: UIButton?\n@IBOutlet var signInSafariButton: UIButton?\n@IBOutlet var signInAutoButton: UIButton?\n@IBOutlet var forgetButton: UIButton?\n\n\n@IBAction func signInEmbedded(_ sender: UIButton?) {\n    if oauth2.isAuthorizing {\n        oauth2.abortAuthorization()\n        return\n    }\n\n    sender?.setTitle(\"Authorizing...\", for: UIControlState.normal)\n\n    oauth2.authConfig.authorizeEmbedded = true\n    oauth2.authConfig.authorizeContext = self\n    oauth2.verbose = true\n\n    oauth2.authorize() { authParameters, error in\n        if let params = authParameters {\n            print(\"Authorized! Access token is in `oauth2.accessToken`\")\n            print(\"Authorized! Additional parameters: \\(params)\")\n        }\n        else {\n            print(\"Authorization was cancelled or went wrong: \\(error)\")   // error will not be nil\n        }\n    }\n\n}\n</code></pre>\n\n<p>In the logs I seem to get back the code but the final exchange fails:</p>\n\n<blockquote>\n  <p>[Debug] OAuth2: Exchanging code 2010D2*********** for access token at <a href=\"https://untappd.com/oauth/authorize\" rel=\"nofollow noreferrer\">https://untappd.com/oauth/authorize</a>\n  redirecting</p>\n  \n  <p>[Debug] OAuth2: Did exchange code for access [false] and refresh [false] tokens\n  Authorized! Access token is in <code>oauth2.accessToken</code>\n  Authorized! Additional parameters: [\"meta\": {\n      \"error_detail\" = \"Missing either the client_id, redirect_url, client_secret or code parameter. Please check your request a try again.\";\n      \"error_type\" = \"param_error\";\n      \"http_code\" = 500;\n  }, \"response\": &lt;__NSArray0 0x174005900>(\n  )\n  ]</p>\n</blockquote>\n\n<p>There doesn't seem to be much help for OAuth2 and Swift 3, unless I'm looking in the wrong places.  Any ideas? </p>\n"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 300,
+  "quota_remaining": 188
+}
