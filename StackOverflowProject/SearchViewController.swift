@@ -81,13 +81,25 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+       
         if searchText.count == 0 {
-            questions = [Question]()
-            return
+             questions = [Question]()
+             return
+         }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if let searchText = searchBar.searchTextField.text {
+            search(searchText)
         }
         
-        let url = urlBuilder.getSearchURL(searchTerm: searchText)
+        searchBar.resignFirstResponder()
+    }
+    
+    func search(_ searchText: String) {
+        
+       let url = urlBuilder.getSearchURL(searchTerm: searchText)
         
         let network = NetworkManager.shared
         network.getData(urlString: url) { (data) in

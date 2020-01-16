@@ -27,9 +27,7 @@ class QuestionViewController: UIViewController {
         let urlString = urlBuilder.getQuestionURL(questionId: questionId)
         
         NetworkManager.shared.getData(urlString: urlString) { (data) in
-            
-            print(String(data: data, encoding: .utf8)!)
-            
+
             let parser = SearchParser()
             parser.parse(data: data) { (questionData) in
                 
@@ -42,6 +40,9 @@ class QuestionViewController: UIViewController {
     
     func populateUI(_ question: Question) {
         self.question = question
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -58,8 +59,7 @@ extension QuestionViewController: UITableViewDataSource {
             else { return UITableViewCell() }
         
         if let post = question {
-            cell.lblBody.text = post.body
-            print(post.body)
+            cell.lblBody.text = post.body?.html2String
         }
         
         return cell

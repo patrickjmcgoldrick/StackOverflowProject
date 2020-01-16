@@ -25,7 +25,6 @@ class NetworkManager {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard let data = data else { return }
-            print("Response URL: \(response?.url)")
             completed(data)
         }
         task.resume()
