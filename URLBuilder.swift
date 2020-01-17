@@ -19,7 +19,7 @@ class URLBuilder {
 
     let questionURL = "https://api.stackexchange.com/2.2/questions/" 
     
-    let answerURL = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle="
+    let answerURL = "https://api.stackexchange.com/2.2//questions/"
 
     
     // MARK: functions LOGIN URLs
@@ -49,6 +49,9 @@ class URLBuilder {
         return "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow\(generateAuthorizationParams())"
     }
     
+    func getAnswersURL(questionId: Int) -> String {
+        return "\(questionURL)\(questionId)/answers?filter=!b1MMEAHHviRpJX&site=stackoverflow\(generateAuthorizationParams())"
+    }
     // MARK: Authorized Params Helper
     func generateAuthorizationParams() -> String {
         return "&client_id=\(APIKeys.StackOverflow.client_id)&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"

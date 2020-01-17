@@ -13,19 +13,24 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let urlBuilder = URLBuilder()
     var questionId: Int?
     var question: Question?
+    var answers = [Answer]()
     
     // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        
-        let urlBuilder = URLBuilder()
+    
+        loadQuestion()
+        loadAnswers()
+    }
+    
+    func loadQuestion() {
         guard let questionId = questionId else { return }
         let urlString = urlBuilder.getQuestionURL(questionId: questionId)
-        print(urlString)
         
         NetworkManager.shared.getData(urlString: urlString) { (data) in
             
@@ -33,16 +38,31 @@ class QuestionViewController: UIViewController {
             parser.parse(data: data) { (questionData) in
                 
                 if questionData.items.count > 0 {
-                    self.populateUI(questionData.items[0])
-               }
+                    self.question = questionData.items[0]
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
             }
         }
     }
     
-    func populateUI(_ question: Question) {
-        self.question = question
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+    func loadAnswers() {
+        guard let questionId = questionId else { return }
+        let urlString = urlBuilder.getAnswersURL(questionId: questionId)
+        NetworkManager.shared.getData(urlString: urlString) { (data) in
+            
+            let parser = AnswerParser()
+            parser.parse(data: data) { (answerData) in
+                
+                if answerData.items.count > 0 {
+
+                    self.answers = answerData.items
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
         }
     }
 }
@@ -50,30 +70,61 @@ class QuestionViewController: UIViewController {
 // MARK: Table View Data Source
 extension QuestionViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if answers.count == 0 {
+            return 1
+        } else {
+            return 2
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            if let post = question {
+                return post.title
+            } else {
+                return "Question:"
+            }
+        } else {
+            return "Answers:"
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        if section == 0 {
+            return 1
+        } else {
+            return answers.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
-        if let post = question, let body = post.body {
-            print("Body: \(body)")
-            if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
-                    else { return UITableViewCell() }
-                print("setting up label")
-                cell.lblBody.text = body.html2String
-                return cell
-            } else {
-                
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionWebCell") as? QuestionTableViewCell
-                    else { return UITableViewCell() }
-                print("setting up webview")
-
-                cell.webView.loadHTMLString(body, baseURL: URL(string: "https://api.stackexchange.com/")!)
-                return cell
-            }
+           
+        if indexPath.section == 0 {
+            return getQuestionCell(indexPath: indexPath)
+        } else {
+            return getAnswerCell(indexPath: indexPath)
         }
-        return UITableViewCell()
+    }
+    
+    func getQuestionCell(indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let post = question, let body = post.body else { return UITableViewCell() }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
+            else { return UITableViewCell() }
+        cell.lblBody.text = body.html2String
+        return cell
+        
+    }
+
+    func getAnswerCell(indexPath: IndexPath) -> UITableViewCell {
+                
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
+            else { return UITableViewCell() }
+        
+        cell.lblBody.text = answers[indexPath.row].body
+        
+        return cell
     }
 }

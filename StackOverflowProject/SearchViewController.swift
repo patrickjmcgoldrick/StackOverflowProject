@@ -100,12 +100,9 @@ extension SearchViewController: UISearchBarDelegate {
     func search(_ searchText: String) {
         
        let url = urlBuilder.getSearchURL(searchTerm: searchText)
-        print("URL: \(url)")
         let network = NetworkManager.shared
         network.getData(urlString: url) { (data) in
-                     
-            print(String(data: data, encoding: .utf8)!)
-            
+                                 
             let parser = SearchParser()
             parser.parse(data: data) { (searchData) in
                 

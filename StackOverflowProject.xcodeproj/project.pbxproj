@@ -30,6 +30,9 @@
 		5EE9DEB123CFB12100D7FAF8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEB023CFB12100D7FAF8 /* String.swift */; };
 		5EE9DEB423CFE83900D7FAF8 /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9DEB323CFE83900D7FAF8 /* question.json */; };
 		5EE9DEB923CFF11100D7FAF8 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */; };
+		5EE9DEBB23D1080600D7FAF8 /* AnswerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBA23D1080600D7FAF8 /* AnswerData.swift */; };
+		5EE9DEBD23D108EC00D7FAF8 /* AnswerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */; };
+		5EE9DEBF23D13F8B00D7FAF8 /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBE23D13F8B00D7FAF8 /* answers.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		5EE9DEB023CFB12100D7FAF8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5EE9DEB323CFE83900D7FAF8 /* question.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = question.json; path = testFiles/question.json; sourceTree = SOURCE_ROOT; };
 		5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		5EE9DEBA23D1080600D7FAF8 /* AnswerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerData.swift; sourceTree = "<group>"; };
+		5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerParser.swift; sourceTree = "<group>"; };
+		5EE9DEBE23D13F8B00D7FAF8 /* answers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = answers.json; path = testFiles/answers.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 				5EE84CC323CA50A500BA1627 /* StackOverflowProjectTests.swift */,
 				5EE84CE423CA941700BA1627 /* search.json */,
 				5EE9DEB323CFE83900D7FAF8 /* question.json */,
+				5EE9DEBE23D13F8B00D7FAF8 /* answers.json */,
 				5EE84CC523CA50A500BA1627 /* Info.plist */,
 			);
 			path = StackOverflowProjectTests;
@@ -184,7 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				5EE84CE023CA905D00BA1627 /* SearchData.swift */,
+				5EE9DEBA23D1080600D7FAF8 /* AnswerData.swift */,
 				5EE84CE223CA921C00BA1627 /* SearchParser.swift */,
+				5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -305,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EE84CE523CA941700BA1627 /* search.json in Resources */,
+				5EE9DEBF23D13F8B00D7FAF8 /* answers.json in Resources */,
 				5EE9DEB423CFE83900D7FAF8 /* question.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +361,9 @@
 				5EE84CE723CAC61300BA1627 /* AnswerViewController.swift in Sources */,
 				5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */,
 				5EE84CDF23CA820A00BA1627 /* NetworkManager.swift in Sources */,
+				5EE9DEBD23D108EC00D7FAF8 /* AnswerParser.swift in Sources */,
 				5EE9DEAD23CFAF3A00D7FAF8 /* Data.swift in Sources */,
+				5EE9DEBB23D1080600D7FAF8 /* AnswerData.swift in Sources */,
 				5E76EA5423CEE22A009E2972 /* APIKeys.swift in Sources */,
 				5EE84CE923CB023F00BA1627 /* QuestionViewController.swift in Sources */,
 				5EE84CAA23CA50A200BA1627 /* AppDelegate.swift in Sources */,

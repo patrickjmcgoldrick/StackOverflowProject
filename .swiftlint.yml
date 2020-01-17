@@ -86,6 +86,8 @@ identifier_name:
     - access_token
     - question_id
     - accepted_answer_id
+    - is_accepted
+    - creation_date
     - has_more
     - quota_max
     - quota_remaining

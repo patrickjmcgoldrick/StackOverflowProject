@@ -19,6 +19,5 @@ struct Question: Codable {
     var question_id: Int
     var accepted_answer_id: Int?
     var title: String
-    var link: String
     var body: String?
 }
