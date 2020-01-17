@@ -20,4 +20,5 @@ struct Answer: Codable {
     var creation_date: Int
     var title: String
     var body: String
+    var score: Int
 }

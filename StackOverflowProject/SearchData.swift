@@ -20,4 +20,5 @@ struct Question: Codable {
     var accepted_answer_id: Int?
     var title: String
     var body: String?
+    var score: Int
 }

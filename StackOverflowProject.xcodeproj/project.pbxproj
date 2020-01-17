@@ -33,6 +33,7 @@
 		5EE9DEBB23D1080600D7FAF8 /* AnswerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBA23D1080600D7FAF8 /* AnswerData.swift */; };
 		5EE9DEBD23D108EC00D7FAF8 /* AnswerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */; };
 		5EE9DEBF23D13F8B00D7FAF8 /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBE23D13F8B00D7FAF8 /* answers.json */; };
+		5EE9DEC123D16E8F00D7FAF8 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEC023D16E8F00D7FAF8 /* AnswerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		5EE9DEBA23D1080600D7FAF8 /* AnswerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerData.swift; sourceTree = "<group>"; };
 		5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerParser.swift; sourceTree = "<group>"; };
 		5EE9DEBE23D13F8B00D7FAF8 /* answers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = answers.json; path = testFiles/answers.json; sourceTree = SOURCE_ROOT; };
+		5EE9DEC023D16E8F00D7FAF8 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */,
 				5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */,
 				5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */,
+				5EE9DEC023D16E8F00D7FAF8 /* AnswerTableViewCell.swift */,
 				5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */,
 				5EE84CDE23CA820A00BA1627 /* NetworkManager.swift */,
 				5EE84CDC23CA7F9100BA1627 /* URLBuilder.swift */,
@@ -190,10 +193,10 @@
 		5EE9DEB723CFE8F000D7FAF8 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				5EE84CE023CA905D00BA1627 /* SearchData.swift */,
 				5EE9DEBA23D1080600D7FAF8 /* AnswerData.swift */,
-				5EE84CE223CA921C00BA1627 /* SearchParser.swift */,
 				5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */,
+				5EE84CE023CA905D00BA1627 /* SearchData.swift */,
+				5EE84CE223CA921C00BA1627 /* SearchParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE9DEC123D16E8F00D7FAF8 /* AnswerTableViewCell.swift in Sources */,
 				5E76EA5923CF8088009E2972 /* Session.swift in Sources */,
 				5EE9DEB923CFF11100D7FAF8 /* QuestionTableViewCell.swift in Sources */,
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,

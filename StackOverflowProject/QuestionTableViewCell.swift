@@ -13,7 +13,9 @@ class QuestionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblBody: UILabel!
     
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var btnFavorited: UIButton!
+    
+    @IBOutlet weak var lblScore: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +26,8 @@ class QuestionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func btnActionFavorite(_ sender: Any) {
     }
 }

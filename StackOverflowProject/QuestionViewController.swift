@@ -86,7 +86,7 @@ extension QuestionViewController: UITableViewDataSource {
                 return "Question:"
             }
         } else {
-            return "Answers:"
+            return "\(answers.count) Answers"
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,17 +114,24 @@ extension QuestionViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
             else { return UITableViewCell() }
         cell.lblBody.text = body.html2String
+        cell.lblScore.text = post.score.description
         return cell
-        
     }
 
     func getAnswerCell(indexPath: IndexPath) -> UITableViewCell {
                 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell") as? AnswerTableViewCell
             else { return UITableViewCell() }
         
-        cell.lblBody.text = answers[indexPath.row].body
-        
+        let answer = answers[indexPath.row]
+        cell.lblBody.text = answer.body
+        cell.lblScore.text = answer.score.description
+        if answer.is_accepted {
+            cell.imgAccepted.image = UIImage(imageLiteralResourceName: "checkmark")
+        } else {
+            cell.imgAccepted.image = nil
+        }
+
         return cell
     }
 }
