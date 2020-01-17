@@ -26,10 +26,8 @@ class URLBuilder {
     // build up OAUTH 2.0 Login URL for StackOverflow
     func getLoginPageURL() -> String {
         
-        let client_id = "client_id=\(APIKeys.StackOverflow.client_id)"
-        let scope = "&scope=read_inbox,private_info"
-        
-        //let scope = "&scope=read_inbox,write_access,private_info"
+        let client_id = "client_id=\(APIKeys.StackOverflow.client_id)&key=\(APIKeys.StackOverflow.key)"
+        let scope = "&scope=read_inbox,write_access,private_info"
 
         let redirect_uri = "&redirect_uri= https://stackexchange.com/oauth/login_success"
         let paramString = client_id + scope + redirect_uri
