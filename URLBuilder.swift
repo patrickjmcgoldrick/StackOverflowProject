@@ -22,7 +22,7 @@ class URLBuilder {
     let answerURL = "https://api.stackexchange.com/2.2//questions/"
 
     
-    // MARK: functions LOGIN URLs
+    // MARK: LOGIN - OAUTH 2.0
     // build up OAUTH 2.0 Login URL for StackOverflow
     func getLoginPageURL() -> String {
         
@@ -36,22 +36,42 @@ class URLBuilder {
         return "\(loginPageURL)?\(encodedString)"
     }
     
-    // MARK: Data URLs
+    // MARK: Search
     func getSearchURL(searchTerm: String) -> String {
         
         guard let encodedString = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return "" }
-        return "\(searchURL)\(encodedString)\(generateAuthorizationParams())"
+        return "\(searchURL)\(encodedString)&\(authParams())"
     }
     
+    // MARK: Questions
     func getQuestionURL(questionId: Int) -> String {
-        return "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow\(generateAuthorizationParams())"
+        return "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow&\(authParams())"
+    }
+
+    func upVoteQuestion(_ answerId: Int) -> String {
+        return ("/2.2/answers/\(answerId)/upvote?\(authParams())")
     }
     
-    func getAnswersURL(questionId: Int) -> String {
-        return "\(questionURL)\(questionId)/answers?filter=!b1MMEAHHviRpJX&site=stackoverflow\(generateAuthorizationParams())"
+    func downVoteQuestion(_ answerId: Int) -> String {
+        return ("/2.2/answers/\(answerId)/downvote?\(authParams())")
     }
+    
+    // MARK: Answers
+    func getAnswersURL(questionId: Int) -> String {
+        return "\(questionURL)\(questionId)/answers?filter=!b1MMEAHHviRpJX&site=stackoverflow&\(authParams())"
+    }
+
+    func upVoteAnswer(_ answerId: Int) -> String {
+        return ("/2.2/answers/\(answerId)/upvote?\(authParams())")
+    }
+    
+    func downVoteAnswer(_ answerId: Int) -> String {
+        return ("/2.2/answers/\(answerId)/downvote?\(authParams())")
+    }
+
     // MARK: Authorized Params Helper
-    func generateAuthorizationParams() -> String {
-        return "&client_id=\(APIKeys.StackOverflow.client_id)&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
+    func authParams() -> String {
+        return "key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
+        //"&client_id=\(APIKeys.StackOverflow.client_id)&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
     }
 }
