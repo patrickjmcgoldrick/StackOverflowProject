@@ -50,6 +50,7 @@ extension SearchViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell") else { return UITableViewCell() }
         
         let question = questions[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = question.title
         
         return cell
