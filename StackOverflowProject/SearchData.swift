@@ -9,13 +9,13 @@
 import Foundation
 
 struct SearchData: Codable {
-    var items: [Question]
+    var items: [QuestionData]
     var has_more: Bool
     var quota_max: Int
     var quota_remaining: Int
 }
 
-struct Question: Codable {
+struct QuestionData: Codable {
     var question_id: Int
     var accepted_answer_id: Int?
     var title: String

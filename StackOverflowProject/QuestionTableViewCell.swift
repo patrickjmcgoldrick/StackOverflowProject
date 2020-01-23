@@ -28,6 +28,6 @@ class QuestionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func btnActionFavorite(_ sender: Any) {
+    @IBAction private func btnActionFavorite(_ sender: Any) {
     }
 }

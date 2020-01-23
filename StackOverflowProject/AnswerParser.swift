@@ -10,7 +10,7 @@ import Foundation
 
 class AnswerParser {
     
-    func parse(data: Data, parsed: @escaping (AnswerData) -> Void) {
+    func parse(data: Data, parsed: @escaping (AnswerItems) -> Void) {
         
         // background the loading / parsing elements
         DispatchQueue.global(qos: .background).async {
@@ -21,9 +21,9 @@ class AnswerParser {
                 let jsonDecoder = JSONDecoder()
                 
                 // decode json into structsspeciesData
-                let answerData = try jsonDecoder.decode(AnswerData.self, from: data)
+                let answerItems = try jsonDecoder.decode(AnswerItems.self, from: data)
                 
-                parsed(answerData)
+                parsed(answerItems)
             } catch {
                 print("Error Parsing JSON: \(error.localizedDescription)")
             }

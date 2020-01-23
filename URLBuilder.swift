@@ -19,7 +19,7 @@ class URLBuilder {
 
     let questionURL = "https://api.stackexchange.com/2.2/questions/" 
     
-    let answerURL = "https://api.stackexchange.com/2.2//questions/"
+    let answerURL = "https://api.stackexchange.com/2.2/questions/"
 
     
     // MARK: LOGIN - OAUTH 2.0

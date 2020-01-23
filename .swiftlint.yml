@@ -85,6 +85,7 @@ identifier_name:
     - client_id
     - access_token
     - question_id
+    - answer_id
     - accepted_answer_id
     - is_accepted
     - creation_date

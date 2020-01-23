@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let urlBuilder = URLBuilder()
-    var questions = [Question]()
+    var questions = [QuestionData]()
     
     // MARK: View Did Load
     override func viewDidLoad() {
@@ -79,15 +79,15 @@ extension SearchViewController: UITableViewDelegate {
 
 // MARK: Search Bar Delegate
 extension SearchViewController: UISearchBarDelegate {
-    
+    /*
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
        
         if searchText.count == 0 {
-             questions = [Question]()
+             questions = [QuestionData]()
              return
          }
     }
-
+*/
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         if let searchText = searchBar.searchTextField.text {
@@ -107,6 +107,9 @@ extension SearchViewController: UISearchBarDelegate {
             parser.parse(data: data) { (searchData) in
                 
                 self.questions = searchData.items
+                
+                print("Quota: \(searchData.quota_remaining)")
+                print(self.questions.count)
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()

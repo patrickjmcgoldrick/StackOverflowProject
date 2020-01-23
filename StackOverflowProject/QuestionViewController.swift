@@ -15,8 +15,8 @@ class QuestionViewController: UIViewController {
     
     let urlBuilder = URLBuilder()
     var questionId: Int?
-    var question: Question?
-    var answers = [Answer]()
+    var question: QuestionData?
+    var answers = [AnswerData]()
     
     // MARK: View Did Load
     override func viewDidLoad() {
@@ -53,11 +53,11 @@ class QuestionViewController: UIViewController {
         NetworkManager.shared.getData(urlString: urlString) { (data) in
             
             let parser = AnswerParser()
-            parser.parse(data: data) { (answerData) in
+            parser.parse(data: data) { (answerItems) in
                 
-                if answerData.items.count > 0 {
+                if answerItems.items.count > 0 {
 
-                    self.answers = answerData.items
+                    self.answers = answerItems.items
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
