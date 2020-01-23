@@ -19,7 +19,7 @@ class URLBuilder {
 
     let questionURL = "https://api.stackexchange.com/2.2/questions/" 
     
-    let answerURL = "https://api.stackexchange.com/2.2/questions/"
+    let answerURL = "https://api.stackexchange.com/2.2/answers/"
 
     
     // MARK: LOGIN - OAUTH 2.0
@@ -40,38 +40,70 @@ class URLBuilder {
     func getSearchURL(searchTerm: String) -> String {
         
         guard let encodedString = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return "" }
-        return "\(searchURL)\(encodedString)&\(authParams())"
+        return "\(searchURL)\(encodedString)&\(authGetParams())"
     }
     
     // MARK: Questions
     func getQuestionURL(questionId: Int) -> String {
-        return "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow&\(authParams())"
-    }
-
-    func upVoteQuestion(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/upvote?\(authParams())")
+        return "\(questionURL)\(questionId)/?filter=!FnhX5sXiIs.YeksGT.C*q60hqb&site=stackoverflow&\(authGetParams())"
     }
     
-    func downVoteQuestion(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/downvote?\(authParams())")
+    // MARK: Favorite
+    func favoriteQuestion(_ questionId: Int) -> String {
+        return ("\(questionURL)\(questionId)/favorite")
+    }
+    
+    func undoFavoriteQuestion(_ questionId: Int) -> String {
+        return ("\(questionURL)\(questionId)/favorite/undo")
+    }
+    
+    // MARK: Upvote Quesiton
+    func upVoteQuestion(_ questionId: Int) -> String {
+        return "\(questionURL)\(questionId)/upvote)"
+    }
+    
+    func undoUpVoteQuestion(_ questionId: Int) -> String {
+        return "\(questionURL)\(questionId)/upvote/undo"
+    }
+
+    // MARK: Downvote Question
+    func downVoteQuestion(_ questionId: Int) -> String {
+        return "\(questionURL)\(questionId)/downvote"
+    }
+    
+    func undoDownVoteQuestion(_ questionId: Int) -> String {
+        return "\(questionURL)\(questionId)/downvote/undo"
     }
     
     // MARK: Answers
     func getAnswersURL(questionId: Int) -> String {
-        return "\(questionURL)\(questionId)/answers?filter=!b1MMEAHHviRpJX&site=stackoverflow&\(authParams())"
+        return "\(questionURL)\(questionId)/answers?filter=!b1MMEAHHviRpJX&site=stackoverflow&\(authGetParams())"
     }
 
+    // MARK: Upvote Answer
     func upVoteAnswer(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/upvote?\(authParams())")
+        return ("/2.2/answers/\(answerId)/upvote")
     }
     
+    func undoUpVoteAnswer(_ answerId: Int) -> String {
+        return ("/2.2/answers/\(answerId)/upvote/undo")
+    }
+
+    // MARK: Downvote Answer
     func downVoteAnswer(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/downvote?\(authParams())")
+        return ("/2.2/answers/\(answerId)/downvote")
+    }
+    
+    func undoDownVoteAnswer(_ answerId: Int) -> String {
+        return ("/2.2/answers/\(answerId)/downvote/undo")
     }
 
     // MARK: Authorized Params Helper
-    func authParams() -> String {
+    private func authGetParams() -> String {
         return "key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
-        //"&client_id=\(APIKeys.StackOverflow.client_id)&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
+    }
+    
+    func authPostParams() -> String {
+        return "site=stackoverflow&filter=!FnhX5sXiIs.YeksGT.C*q60hqb&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
     }
 }

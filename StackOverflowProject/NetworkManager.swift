@@ -80,13 +80,17 @@ class NetworkManager {
  */
     }
     
-    /*
+    
     func postData(urlString: String, params: Data, completed: @escaping (Data) -> Void) {
         
+        let headers = [
+                "Content-Type": "application/x-www-form-urlencoded"
+            ]
+
         guard let url = URL(string: urlString) else { return }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
         request.httpBody = params
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
         
@@ -96,5 +100,5 @@ class NetworkManager {
         }
         task.resume()
     }
- */
+ 
 }

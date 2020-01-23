@@ -25,7 +25,6 @@ class QuestionViewController: UIViewController {
         tableView.dataSource = self
     
         loadQuestion()
-        loadAnswers()
     }
     
     func loadQuestion() {
@@ -34,30 +33,17 @@ class QuestionViewController: UIViewController {
         
         NetworkManager.shared.getData(urlString: urlString) { (data) in
             
-            let parser = SearchParser()
-            parser.parse(data: data) { (questionData) in
+            let parser = QuestionParser()
+            parser.parse(data: data) { (questionItems) in
                 
-                if questionData.items.count > 0 {
-                    self.question = questionData.items[0]
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                print(String(data: data, encoding: .utf8)!)
+                
+                if questionItems.items.count > 0 {
+                    self.question = questionItems.items[0]
+                    if let newAnswers =  questionItems.items[0].answers {
+                        self.answers = newAnswers
                     }
-                }
-            }
-        }
-    }
-    
-    func loadAnswers() {
-        guard let questionId = questionId else { return }
-        let urlString = urlBuilder.getAnswersURL(questionId: questionId)
-        NetworkManager.shared.getData(urlString: urlString) { (data) in
-            
-            let parser = AnswerParser()
-            parser.parse(data: data) { (answerItems) in
-                
-                if answerItems.items.count > 0 {
-
-                    self.answers = answerItems.items
+                    
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -107,25 +93,33 @@ extension QuestionViewController: UITableViewDataSource {
         }
     }
     
+    // MARK: Question Cell
     func getQuestionCell(indexPath: IndexPath) -> UITableViewCell {
         
-        guard let post = question, let body = post.body else { return UITableViewCell() }
+        guard let post = question else { return UITableViewCell() }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
             else { return UITableViewCell() }
-        cell.lblBody.text = body.html2String
+        cell.tag = 0
+        cell.updateDelegate = self
+        cell.lblBody.text = post.body.html2String
         cell.lblScore.text = post.score.description
+        print("Answers in Question: \(post.answers?.count)")
         return cell
     }
 
+    // MARK: Answer Cell
     func getAnswerCell(indexPath: IndexPath) -> UITableViewCell {
                 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell") as? AnswerTableViewCell
             else { return UITableViewCell() }
         
         let answer = answers[indexPath.row]
+        // add one (1) to tag so we know which are answers
+        cell.tag = indexPath.row + 1
         cell.lblBody.text = answer.body
         cell.lblScore.text = answer.score.description
+        
         if answer.is_accepted {
             cell.imgAccepted.image = UIImage(imageLiteralResourceName: "checkmark")
         } else {
@@ -133,5 +127,37 @@ extension QuestionViewController: UITableViewDataSource {
         }
 
         return cell
+    }
+}
+
+extension QuestionViewController: UpdateDelegate {
+    
+    func updateUpvote(row: Int, newStatus: Bool) {
+        //
+    }
+    
+    func updateDownvote(row: Int, newStatus: Bool) {
+        //
+    }
+    
+    // must be row 0, Question
+    func updateFavorite() {
+        guard let favorite = question?.favorited else { return }
+        guard let questionId = question?.question_id else { return }
+        var tempUrlString: String?
+        if favorite {
+            tempUrlString = urlBuilder.undoFavoriteQuestion(questionId)
+        } else {
+            tempUrlString = urlBuilder.favoriteQuestion(questionId)
+        }
+        guard let urlString = tempUrlString else { return }
+        print(urlString)
+        let data = urlBuilder.authPostParams().data(using: .utf8)
+        guard let paramData = data else { return }
+        
+        NetworkManager.shared.postData(urlString: urlString, params: paramData) { (data) in
+                          
+            print(String(data: data, encoding: .utf8)!)
+        }
     }
 }

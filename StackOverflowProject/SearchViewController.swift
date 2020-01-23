@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let urlBuilder = URLBuilder()
-    var questions = [QuestionData]()
+    var questions = [SearchData]()
     
     // MARK: View Did Load
     override func viewDidLoad() {

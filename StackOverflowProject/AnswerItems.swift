@@ -18,7 +18,8 @@ struct AnswerItems: Codable {
 struct AnswerData: Codable {
     var is_accepted: Bool
     var creation_date: Int
-    var title: String
     var body: String
     var score: Int
+    var upvoted: Bool
+    var downvoted: Bool
 }

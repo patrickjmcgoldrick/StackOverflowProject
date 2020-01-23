@@ -18,6 +18,8 @@
 		5EB08C5D23D91CE2005C6A73 /* CoreDataFetchOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5623D91CE1005C6A73 /* CoreDataFetchOps.swift */; };
 		5EB08C5E23D91CE2005C6A73 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5723D91CE1005C6A73 /* AnswerModel.swift */; };
 		5EB08C5F23D91CE2005C6A73 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5823D91CE1005C6A73 /* QuestionModel.swift */; };
+		5EB08C6123D97683005C6A73 /* QuestionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C6023D97682005C6A73 /* QuestionParser.swift */; };
+		5EB08C6323D981BD005C6A73 /* UpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */; };
 		5EE84CAA23CA50A200BA1627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CA923CA50A200BA1627 /* AppDelegate.swift */; };
 		5EE84CAC23CA50A200BA1627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */; };
 		5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */; };
@@ -78,6 +80,8 @@
 		5EB08C5623D91CE1005C6A73 /* CoreDataFetchOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataFetchOps.swift; sourceTree = "<group>"; };
 		5EB08C5723D91CE1005C6A73 /* AnswerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
 		5EB08C5823D91CE1005C6A73 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		5EB08C6023D97682005C6A73 /* QuestionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionParser.swift; sourceTree = "<group>"; };
+		5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDelegate.swift; sourceTree = "<group>"; };
 		5EE84CA623CA50A200BA1627 /* StackOverflowProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE84CA923CA50A200BA1627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				5E76EA5323CEE22A009E2972 /* APIKeys.swift */,
 				5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */,
 				5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */,
+				5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */,
 				5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */,
 				5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */,
 				5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */,
@@ -263,6 +268,7 @@
 				5EE84CE023CA905D00BA1627 /* SearchData.swift */,
 				5EE9DEBA23D1080600D7FAF8 /* AnswerItems.swift */,
 				5EE84CE223CA921C00BA1627 /* SearchParser.swift */,
+				5EB08C6023D97682005C6A73 /* QuestionParser.swift */,
 				5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */,
 			);
 			name = Parsers;
@@ -429,12 +435,14 @@
 				5EE9DEB923CFF11100D7FAF8 /* QuestionTableViewCell.swift in Sources */,
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,
 				5EE84CDD23CA7F9100BA1627 /* URLBuilder.swift in Sources */,
+				5EB08C6123D97683005C6A73 /* QuestionParser.swift in Sources */,
 				5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */,
 				5EE84CE723CAC61300BA1627 /* AnswerViewController.swift in Sources */,
 				5EB08C5D23D91CE2005C6A73 /* CoreDataFetchOps.swift in Sources */,
 				5EB08C5C23D91CE2005C6A73 /* CoreDataManager.swift in Sources */,
 				5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */,
 				5EE84CDF23CA820A00BA1627 /* NetworkManager.swift in Sources */,
+				5EB08C6323D981BD005C6A73 /* UpdateDelegate.swift in Sources */,
 				5EE9DEBD23D108EC00D7FAF8 /* AnswerParser.swift in Sources */,
 				5EB08C5F23D91CE2005C6A73 /* QuestionModel.swift in Sources */,
 				5EE9DEAD23CFAF3A00D7FAF8 /* Data.swift in Sources */,

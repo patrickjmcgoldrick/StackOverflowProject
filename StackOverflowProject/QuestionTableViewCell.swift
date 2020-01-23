@@ -17,6 +17,8 @@ class QuestionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblScore: UILabel!
     
+    var updateDelegate: UpdateDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,9 +27,12 @@ class QuestionTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        print("selected")
     }
     
-    @IBAction private func btnActionFavorite(_ sender: Any) {
+    @IBAction func btnActionFavorite(_ sender: Any) {
+        if let delegate = updateDelegate {
+            delegate.updateFavorite()
+        }
     }
 }
