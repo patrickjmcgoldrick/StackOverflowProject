@@ -44,8 +44,12 @@ class URLBuilder {
     }
     
     // MARK: Questions
-    func getQuestionURL(questionId: Int) -> String {
+    func getQuestionAndAnswersURL(questionId: Int) -> String {
         return "\(questionURL)\(questionId)/?filter=!FnhX5sXiIs.YeksGT.C*q60hqb&site=stackoverflow&\(authGetParams())"
+    }
+    
+    func getQuestionOnly(questionId: Int) -> String {
+       return  "\(questionURL)\(questionId)/?filter=!9Z(-wwYGT&site=stackoverflow&\(authGetParams())"
     }
     
     // MARK: Favorite
@@ -59,7 +63,7 @@ class URLBuilder {
     
     // MARK: Upvote Quesiton
     func upVoteQuestion(_ questionId: Int) -> String {
-        return "\(questionURL)\(questionId)/upvote)"
+        return "\(questionURL)\(questionId)/upvote"
     }
     
     func undoUpVoteQuestion(_ questionId: Int) -> String {
@@ -104,6 +108,6 @@ class URLBuilder {
     }
     
     func authPostParams() -> String {
-        return "site=stackoverflow&filter=!FnhX5sXiIs.YeksGT.C*q60hqb&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
+        return "site=stackoverflow&filter=!FnhX5sXiIs.YeksPCkGy9NDGT6&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
     }
 }

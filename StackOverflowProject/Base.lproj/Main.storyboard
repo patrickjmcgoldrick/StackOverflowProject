@@ -89,6 +89,9 @@
                                                         <constraint firstAttribute="width" secondItem="u0b-Ni-FAn" secondAttribute="height" multiplier="1:1" id="4vJ-da-Eje"/>
                                                     </constraints>
                                                     <state key="normal" image="up"/>
+                                                    <connections>
+                                                        <action selector="btnActionQuestionUp:" destination="KdZ-E8-xhH" eventType="touchUpInside" id="pF7-Cv-0LH"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-rO-deR">
                                                     <rect key="frame" x="346" y="83" width="48" height="48"/>
@@ -97,6 +100,9 @@
                                                         <constraint firstAttribute="width" secondItem="ujD-rO-deR" secondAttribute="height" multiplier="1:1" id="HIJ-d2-sl1"/>
                                                     </constraints>
                                                     <state key="normal" image="down"/>
+                                                    <connections>
+                                                        <action selector="btnActionQuestionDown:" destination="KdZ-E8-xhH" eventType="touchUpInside" id="KKK-LA-3t0"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGv-R0-Uaw">
                                                     <rect key="frame" x="363.5" y="59" width="13" height="24"/>
@@ -133,6 +139,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnFavorited" destination="Lav-c6-mh3" id="eFY-u5-pjg"/>
+                                            <outlet property="btnQuestionDown" destination="ujD-rO-deR" id="4V1-pd-0Tw"/>
+                                            <outlet property="btnQuestionUp" destination="u0b-Ni-FAn" id="1gq-pu-bsk"/>
                                             <outlet property="lblBody" destination="27b-RD-BUl" id="UCm-Mp-I8s"/>
                                             <outlet property="lblScore" destination="TGv-R0-Uaw" id="ci6-Gb-juj"/>
                                         </connections>

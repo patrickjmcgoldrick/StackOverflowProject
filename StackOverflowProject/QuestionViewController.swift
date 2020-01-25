@@ -29,7 +29,7 @@ class QuestionViewController: UIViewController {
     
     func loadQuestion() {
         guard let questionId = questionId else { return }
-        let urlString = urlBuilder.getQuestionURL(questionId: questionId)
+        let urlString = urlBuilder.getQuestionAndAnswersURL(questionId: questionId)
         
         NetworkManager.shared.getData(urlString: urlString) { (data) in
             
@@ -104,7 +104,21 @@ extension QuestionViewController: UITableViewDataSource {
         cell.updateDelegate = self
         cell.lblBody.text = post.body.html2String
         cell.lblScore.text = post.score.description
-        print("Answers in Question: \(post.answers?.count)")
+        if post.upvoted {
+            cell.btnQuestionUp.imageView?.image = UIImage(imageLiteralResourceName: "up")
+        } else {
+            cell.btnQuestionUp.imageView?.image = UIImage(imageLiteralResourceName: "up_grey")
+        }
+        if post.downvoted {
+            cell.btnQuestionDown.imageView?.image = UIImage(imageLiteralResourceName: "down")
+        } else {
+            cell.btnQuestionDown.imageView?.image = UIImage(imageLiteralResourceName: "down_grey")
+        }
+        if post.favorited {
+            cell.btnFavorited.imageView?.image = UIImage(imageLiteralResourceName: "star")
+        } else {
+            cell.btnFavorited.imageView?.image = UIImage(imageLiteralResourceName: "star_empty")
+        }
         return cell
     }
 
@@ -132,12 +146,69 @@ extension QuestionViewController: UITableViewDataSource {
 
 extension QuestionViewController: UpdateDelegate {
     
-    func updateUpvote(row: Int, newStatus: Bool) {
-        //
+    func updateUpvote(row: Int) {
+        
+        var tempUrlString: String?
+        if row == 0 {
+            guard let upVoted = question?.upvoted else { return }
+            guard let questionId = question?.question_id else { return }
+            if upVoted {
+                tempUrlString = urlBuilder.undoUpVoteQuestion(questionId)
+            } else {
+                tempUrlString = urlBuilder.upVoteQuestion(questionId)
+            }
+        }
+        guard let urlString = tempUrlString else { return }
+        print("urlString: \(urlString)")
+
+        let data = urlBuilder.authPostParams().data(using: .utf8)
+        guard let paramData = data else { return }
+
+        NetworkManager.shared.postData(urlString: urlString, params: paramData) { (data) in
+                          
+            print(String(data: data, encoding: .utf8)!)
+            let questionParser = QuestionParser()
+            questionParser.parse(data: data) { (questionItems) in
+                if questionItems.items.count > 0 {
+                    self.question = questionItems.items[0]
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
-    func updateDownvote(row: Int, newStatus: Bool) {
-        //
+    func updateDownvote(row: Int) {
+        var tempUrlString: String?
+        if row == 0 {
+            guard let downVoted = question?.downvoted else { return }
+            guard let questionId = question?.question_id else { return }
+            if downVoted {
+                tempUrlString = urlBuilder.undoDownVoteQuestion(questionId)
+            } else {
+                tempUrlString = urlBuilder.downVoteQuestion(questionId)
+            }
+        }
+        guard let urlString = tempUrlString else { return }
+        print("urlString: \(urlString)")
+
+        let data = urlBuilder.authPostParams().data(using: .utf8)
+        guard let paramData = data else { return }
+
+        NetworkManager.shared.postData(urlString: urlString, params: paramData) { (data) in
+                          
+            print(String(data: data, encoding: .utf8)!)
+            let questionParser = QuestionParser()
+            questionParser.parse(data: data) { (questionItems) in
+                if questionItems.items.count > 0 {
+                    self.question = questionItems.items[0]
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     // must be row 0, Question
@@ -158,6 +229,15 @@ extension QuestionViewController: UpdateDelegate {
         NetworkManager.shared.postData(urlString: urlString, params: paramData) { (data) in
                           
             print(String(data: data, encoding: .utf8)!)
+            let questionParser = QuestionParser()
+            questionParser.parse(data: data) { (questionItems) in
+                if questionItems.items.count > 0 {
+                    self.question = questionItems.items[0]
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
         }
     }
 }

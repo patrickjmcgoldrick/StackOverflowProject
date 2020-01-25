@@ -10,9 +10,9 @@ import Foundation
 
 protocol UpdateDelegate {
 
-    func updateUpvote(row: Int, newStatus: Bool)
+    func updateUpvote(row: Int)
     
-    func updateDownvote(row: Int, newStatus: Bool)
+    func updateDownvote(row: Int)
     
     // only the Question can be favorited
     // so no need to specify row
