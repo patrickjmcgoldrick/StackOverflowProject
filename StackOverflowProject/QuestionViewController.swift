@@ -131,9 +131,19 @@ extension QuestionViewController: UITableViewDataSource {
         let answer = answers[indexPath.row]
         // add one (1) to tag so we know which are answers
         cell.tag = indexPath.row + 1
+        cell.updateDelegate = self
         cell.lblBody.text = answer.body
         cell.lblScore.text = answer.score.description
-        
+        if answer.upvoted {
+            cell.btnAnswerUpvote.imageView?.image = UIImage(imageLiteralResourceName: "up")
+        } else {
+            cell.btnAnswerUpvote.imageView?.image = UIImage(imageLiteralResourceName: "up_grey")
+        }
+        if answer.downvoted {
+            cell.btnAnswerDownvote.imageView?.image = UIImage(imageLiteralResourceName: "down")
+        } else {
+            cell.btnAnswerDownvote.imageView?.image = UIImage(imageLiteralResourceName: "down_grey")
+        }
         if answer.is_accepted {
             cell.imgAccepted.image = UIImage(imageLiteralResourceName: "checkmark")
         } else {
@@ -157,25 +167,20 @@ extension QuestionViewController: UpdateDelegate {
             } else {
                 tempUrlString = urlBuilder.upVoteQuestion(questionId)
             }
+        } else {
+            let upVoted = answers[row - 1].upvoted
+            let answerId = answers[row - 1].answer_id
+            if upVoted {
+                tempUrlString = urlBuilder.undoUpVoteAnswer(answerId)
+            } else {
+                tempUrlString = urlBuilder.upVoteAnswer(answerId)
+            }
         }
         guard let urlString = tempUrlString else { return }
-        print("urlString: \(urlString)")
-
-        let data = urlBuilder.authPostParams().data(using: .utf8)
-        guard let paramData = data else { return }
-
-        NetworkManager.shared.postData(urlString: urlString, params: paramData) { (data) in
-                          
-            print(String(data: data, encoding: .utf8)!)
-            let questionParser = QuestionParser()
-            questionParser.parse(data: data) { (questionItems) in
-                if questionItems.items.count > 0 {
-                    self.question = questionItems.items[0]
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }
+        if row == 0 { // Qustion
+            updateQuestionData(urlString)
+        } else {
+            updateAnswerData(urlString, row: row - 1)
         }
     }
     
@@ -189,25 +194,20 @@ extension QuestionViewController: UpdateDelegate {
             } else {
                 tempUrlString = urlBuilder.downVoteQuestion(questionId)
             }
+        } else {
+            let downVoted = answers[row - 1].downvoted
+            let answerId = answers[row - 1].answer_id
+            if downVoted {
+                tempUrlString = urlBuilder.undoDownVoteAnswer(answerId)
+            } else {
+                tempUrlString = urlBuilder.downVoteAnswer(answerId)
+            }
         }
         guard let urlString = tempUrlString else { return }
-        print("urlString: \(urlString)")
-
-        let data = urlBuilder.authPostParams().data(using: .utf8)
-        guard let paramData = data else { return }
-
-        NetworkManager.shared.postData(urlString: urlString, params: paramData) { (data) in
-                          
-            print(String(data: data, encoding: .utf8)!)
-            let questionParser = QuestionParser()
-            questionParser.parse(data: data) { (questionItems) in
-                if questionItems.items.count > 0 {
-                    self.question = questionItems.items[0]
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }
+        if row == 0 { // Question
+            updateQuestionData(urlString)
+        } else { // Answer
+            updateAnswerData(urlString, row: row - 1)
         }
     }
     
@@ -222,6 +222,10 @@ extension QuestionViewController: UpdateDelegate {
             tempUrlString = urlBuilder.favoriteQuestion(questionId)
         }
         guard let urlString = tempUrlString else { return }
+        updateQuestionData(urlString)
+    }
+    
+    private func updateQuestionData(_ urlString: String) {
         print(urlString)
         let data = urlBuilder.authPostParams().data(using: .utf8)
         guard let paramData = data else { return }
@@ -233,6 +237,26 @@ extension QuestionViewController: UpdateDelegate {
             questionParser.parse(data: data) { (questionItems) in
                 if questionItems.items.count > 0 {
                     self.question = questionItems.items[0]
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func updateAnswerData(_ urlString: String, row: Int) {
+        print(urlString)
+        let data = urlBuilder.authPostParams().data(using: .utf8)
+        guard let paramData = data else { return }
+        
+        NetworkManager.shared.postData(urlString: urlString, params: paramData) { (data) in
+                          
+            print(String(data: data, encoding: .utf8)!)
+            let answerParser = AnswerParser()
+            answerParser.parse(data: data) { (answerItems) in
+                if answerItems.items.count > 0 {
+                    self.answers[row] = answerItems.items[0]
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }

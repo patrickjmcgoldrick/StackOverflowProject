@@ -165,6 +165,9 @@
                                                         <constraint firstAttribute="width" secondItem="NoU-tG-Aaq" secondAttribute="height" multiplier="1:1" id="t5s-oo-W1P"/>
                                                     </constraints>
                                                     <state key="normal" image="up"/>
+                                                    <connections>
+                                                        <action selector="btnActionUpvote:" destination="hpg-BU-AwC" eventType="touchUpInside" id="MLw-2L-PB7"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgB-8t-B4T">
                                                     <rect key="frame" x="346" y="83" width="48" height="48"/>
@@ -173,6 +176,9 @@
                                                         <constraint firstAttribute="width" constant="48" id="Sqk-jx-9BY"/>
                                                     </constraints>
                                                     <state key="normal" image="down"/>
+                                                    <connections>
+                                                        <action selector="btnActionDownvote:" destination="hpg-BU-AwC" eventType="touchUpInside" id="LJ8-cD-9ep"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYo-yp-9qO">
                                                     <rect key="frame" x="363.5" y="59" width="13" height="24"/>
@@ -204,6 +210,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnAnswerDownvote" destination="UgB-8t-B4T" id="HHZ-bf-K9B"/>
+                                            <outlet property="btnAnswerUpvote" destination="NoU-tG-Aaq" id="lNw-U2-M5z"/>
                                             <outlet property="imgAccepted" destination="iYD-yv-8gR" id="LJN-Ab-mEB"/>
                                             <outlet property="lblBody" destination="zVk-gP-YeD" id="LjY-Kp-qAC"/>
                                             <outlet property="lblScore" destination="PYo-yp-9qO" id="F3P-jd-vs0"/>

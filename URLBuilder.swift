@@ -86,20 +86,20 @@ class URLBuilder {
 
     // MARK: Upvote Answer
     func upVoteAnswer(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/upvote")
+        return "\(answerURL)\(answerId)/upvote"
     }
     
     func undoUpVoteAnswer(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/upvote/undo")
+        return "\(answerURL)\(answerId)/upvote/undo"
     }
 
     // MARK: Downvote Answer
     func downVoteAnswer(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/downvote")
+        return "\(answerURL)\(answerId)/downvote"
     }
     
     func undoDownVoteAnswer(_ answerId: Int) -> String {
-        return ("/2.2/answers/\(answerId)/downvote/undo")
+        return "\(answerURL)\(answerId)/downvote/undo"
     }
 
     // MARK: Authorized Params Helper
