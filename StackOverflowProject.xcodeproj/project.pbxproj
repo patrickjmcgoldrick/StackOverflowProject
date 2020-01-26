@@ -43,6 +43,7 @@
 		5EE9DEBB23D1080600D7FAF8 /* AnswerItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBA23D1080600D7FAF8 /* AnswerItems.swift */; };
 		5EE9DEBD23D108EC00D7FAF8 /* AnswerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */; };
 		5EE9DEBF23D13F8B00D7FAF8 /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBE23D13F8B00D7FAF8 /* answers.json */; };
+		5EEBB07323DE561100CFB96C /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEBB07223DE561100CFB96C /* QuestionData.swift */; };
 		78E3348356B0249D30A1393F /* Pods_StackOverflowProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F652C19E2D1B192448EF548 /* Pods_StackOverflowProjectTests.framework */; };
 		EB529E82E6214AABB01EB753 /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28138F9BE041760D7C50DDCA /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		5EE9DEBA23D1080600D7FAF8 /* AnswerItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerItems.swift; sourceTree = "<group>"; };
 		5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerParser.swift; sourceTree = "<group>"; };
 		5EE9DEBE23D13F8B00D7FAF8 /* answers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = answers.json; path = testFiles/answers.json; sourceTree = SOURCE_ROOT; };
+		5EEBB07223DE561100CFB96C /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		7F652C19E2D1B192448EF548 /* Pods_StackOverflowProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804952038DC44A68E2A21F1D /* Pods_StackOverflowProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		929EF3A137334C7549BE26E2 /* Pods-StackOverflowProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProjectTests.release.xcconfig"; path = "Target Support Files/Pods-StackOverflowProjectTests/Pods-StackOverflowProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				5EE84CE023CA905D00BA1627 /* SearchData.swift */,
+				5EEBB07223DE561100CFB96C /* QuestionData.swift */,
 				5EE9DEBA23D1080600D7FAF8 /* AnswerItems.swift */,
 				5EE84CE223CA921C00BA1627 /* SearchParser.swift */,
 				5EB08C6023D97682005C6A73 /* QuestionParser.swift */,
@@ -431,6 +434,7 @@
 			files = (
 				5EB08C5B23D91CE2005C6A73 /* CoreDataDeleteOps.swift in Sources */,
 				5EB08C5023D912E5005C6A73 /* AnswerTableViewCell.swift in Sources */,
+				5EEBB07323DE561100CFB96C /* QuestionData.swift in Sources */,
 				5E76EA5923CF8088009E2972 /* Session.swift in Sources */,
 				5EE9DEB923CFF11100D7FAF8 /* QuestionTableViewCell.swift in Sources */,
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,
