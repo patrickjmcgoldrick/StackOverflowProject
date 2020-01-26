@@ -9,9 +9,9 @@
 - [ ] MVVM
 - [ ] Should support lazy loading if required.
 - [ ] Should support pagination.
-- [ ] User can save favorite questions.
+- [X] User can save favorite questions.
 - [x] Should use swiftLint and get warnings under 20. (tip use SwiftLint from the very start and don’t let the errors pile up.)
-- [ ] Should be able to upvote or downvote a question.
+- [X] Should be able to upvote or downvote a question.
 - [ ] Should be able to post a question with HTTP POST.
 - [X] Should be able to view answers for questions
 - [ ] Should be able to sort answers.
