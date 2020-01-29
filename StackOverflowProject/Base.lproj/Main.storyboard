@@ -7,7 +7,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--New Post-->
+        <scene sceneID="LmH-Hm-Qbu">
+            <objects>
+                <viewController id="blG-jE-bax" customClass="NewPostViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XaT-I3-TVq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-Q7-R5u">
+                                <rect key="frame" x="20" y="130" width="374" height="234"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="Xnw-1m-To7"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sec-Ff-sus">
+                                <rect key="frame" x="0.0" y="442" width="414" height="366"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-gp-Y68">
+                                <rect key="frame" x="20" y="80" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tG-fC-DZ7">
+                                <rect key="frame" x="180" y="388" width="54" height="30"/>
+                                <state key="normal" title="Preview"/>
+                                <connections>
+                                    <action selector="btnActionPreview:" destination="blG-jE-bax" eventType="touchUpInside" id="o2X-UW-2xS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7tG-fC-DZ7" firstAttribute="top" secondItem="gWl-Q7-R5u" secondAttribute="bottom" constant="24" id="DFB-Po-WYa"/>
+                            <constraint firstItem="Sec-Ff-sus" firstAttribute="top" secondItem="7tG-fC-DZ7" secondAttribute="bottom" constant="24" id="DOb-qZ-Kcy"/>
+                            <constraint firstItem="gWl-Q7-R5u" firstAttribute="leading" secondItem="4cC-mR-Ar7" secondAttribute="leading" constant="20" id="Ftt-AM-q3a"/>
+                            <constraint firstItem="4cC-mR-Ar7" firstAttribute="trailing" secondItem="kgh-gp-Y68" secondAttribute="trailing" constant="20" id="Gc6-1i-LJ5"/>
+                            <constraint firstItem="gWl-Q7-R5u" firstAttribute="top" secondItem="kgh-gp-Y68" secondAttribute="bottom" constant="16" id="GmV-8f-KM8"/>
+                            <constraint firstItem="Sec-Ff-sus" firstAttribute="leading" secondItem="4cC-mR-Ar7" secondAttribute="leading" id="K3X-tZ-ccj"/>
+                            <constraint firstItem="kgh-gp-Y68" firstAttribute="top" secondItem="4cC-mR-Ar7" secondAttribute="top" constant="24" id="adR-7f-yi9"/>
+                            <constraint firstItem="4cC-mR-Ar7" firstAttribute="bottom" secondItem="Sec-Ff-sus" secondAttribute="bottom" id="cw5-P3-Ea5"/>
+                            <constraint firstItem="4cC-mR-Ar7" firstAttribute="trailing" secondItem="gWl-Q7-R5u" secondAttribute="trailing" constant="20" id="m7G-Cb-79x"/>
+                            <constraint firstItem="7tG-fC-DZ7" firstAttribute="centerX" secondItem="XaT-I3-TVq" secondAttribute="centerX" id="olZ-3k-tvA"/>
+                            <constraint firstItem="kgh-gp-Y68" firstAttribute="leading" secondItem="4cC-mR-Ar7" secondAttribute="leading" constant="20" id="rWb-rP-x59"/>
+                            <constraint firstItem="4cC-mR-Ar7" firstAttribute="trailing" secondItem="Sec-Ff-sus" secondAttribute="trailing" id="yqI-87-QLc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4cC-mR-Ar7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Post" id="F4Z-Z6-Ebo">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="s1n-I0-5Iw">
+                            <connections>
+                                <action selector="btnActionPost:" destination="blG-jE-bax" id="aWK-f0-nOH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="previewTable" destination="Sec-Ff-sus" id="rzF-QS-YAv"/>
+                        <outlet property="taBody" destination="gWl-Q7-R5u" id="URW-pR-Kub"/>
+                        <outlet property="tfTitle" destination="kgh-gp-Y68" id="x8C-zF-wPG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpV-ah-uI1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3347.826086956522" y="-577.23214285714278"/>
+        </scene>
+        <!--Stack Overflow-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,11 +116,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PCi-7t-Km8"/>
+                    <navigationItem key="navigationItem" title="Stack Overflow" id="PCi-7t-Km8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pJP-c9-2lA">
+                            <connections>
+                                <action selector="btnActionNewPost:" destination="BYZ-38-t0r" id="g03-3O-gND"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchView" destination="3Je-98-kwP" id="52p-FS-9Hq"/>
                         <outlet property="tableView" destination="3Xr-Q6-QhG" id="0tl-dF-NmF"/>
                         <segue destination="5jQ-Je-mQm" kind="show" identifier="toAnswers" id="6Zr-kZ-YNS"/>
+                        <segue destination="blG-jE-bax" kind="show" identifier="toNewPost" id="Lyt-K7-j9D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

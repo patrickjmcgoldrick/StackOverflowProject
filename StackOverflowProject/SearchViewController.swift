@@ -31,6 +31,13 @@ class SearchViewController: UIViewController {
         } */
     }
     
+    @IBAction func btnActionNewPost(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toNewPost", sender: self)
+    }
+    
+    
+    
     func dateToInt(_ date: Date) -> Int {
         
         let timeInterval = date.timeIntervalSince1970

@@ -29,7 +29,6 @@
 		5EE84CB923CA50A400BA1627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE84CB723CA50A400BA1627 /* LaunchScreen.storyboard */; };
 		5EE84CC423CA50A500BA1627 /* StackOverflowProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CC323CA50A500BA1627 /* StackOverflowProjectTests.swift */; };
 		5EE84CCF23CA50A500BA1627 /* StackOverflowProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CCE23CA50A500BA1627 /* StackOverflowProjectUITests.swift */; };
-		5EE84CDD23CA7F9100BA1627 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CDC23CA7F9100BA1627 /* URLBuilder.swift */; };
 		5EE84CDF23CA820A00BA1627 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CDE23CA820A00BA1627 /* NetworkManager.swift */; };
 		5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE023CA905D00BA1627 /* SearchData.swift */; };
 		5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE223CA921C00BA1627 /* SearchParser.swift */; };
@@ -44,6 +43,7 @@
 		5EE9DEBD23D108EC00D7FAF8 /* AnswerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */; };
 		5EE9DEBF23D13F8B00D7FAF8 /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBE23D13F8B00D7FAF8 /* answers.json */; };
 		5EEBB07323DE561100CFB96C /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEBB07223DE561100CFB96C /* QuestionData.swift */; };
+		5EEBB07523DE88A200CFB96C /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */; };
 		78E3348356B0249D30A1393F /* Pods_StackOverflowProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F652C19E2D1B192448EF548 /* Pods_StackOverflowProjectTests.framework */; };
 		EB529E82E6214AABB01EB753 /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28138F9BE041760D7C50DDCA /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework */; };
 /* End PBXBuildFile section */
@@ -98,7 +98,6 @@
 		5EE84CCA23CA50A500BA1627 /* StackOverflowProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverflowProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE84CCE23CA50A500BA1627 /* StackOverflowProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowProjectUITests.swift; sourceTree = "<group>"; };
 		5EE84CD023CA50A500BA1627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EE84CDC23CA7F9100BA1627 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = SOURCE_ROOT; };
 		5EE84CDE23CA820A00BA1627 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5EE84CE023CA905D00BA1627 /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		5EE84CE223CA921C00BA1627 /* SearchParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParser.swift; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		5EE9DEBC23D108EC00D7FAF8 /* AnswerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerParser.swift; sourceTree = "<group>"; };
 		5EE9DEBE23D13F8B00D7FAF8 /* answers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = answers.json; path = testFiles/answers.json; sourceTree = SOURCE_ROOT; };
 		5EEBB07223DE561100CFB96C /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7F652C19E2D1B192448EF548 /* Pods_StackOverflowProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804952038DC44A68E2A21F1D /* Pods_StackOverflowProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		929EF3A137334C7549BE26E2 /* Pods-StackOverflowProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProjectTests.release.xcconfig"; path = "Target Support Files/Pods-StackOverflowProjectTests/Pods-StackOverflowProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,13 +217,13 @@
 				5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */,
 				5E76EA5323CEE22A009E2972 /* APIKeys.swift */,
 				5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */,
+				5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */,
 				5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */,
 				5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */,
 				5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */,
 				5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */,
 				5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */,
 				5EE84CDE23CA820A00BA1627 /* NetworkManager.swift */,
-				5EE84CDC23CA7F9100BA1627 /* URLBuilder.swift */,
 				5EE84CB523CA50A400BA1627 /* Assets.xcassets */,
 				5EE84CB723CA50A400BA1627 /* LaunchScreen.storyboard */,
 				5EE84CAF23CA50A200BA1627 /* Main.storyboard */,
@@ -438,7 +438,6 @@
 				5E76EA5923CF8088009E2972 /* Session.swift in Sources */,
 				5EE9DEB923CFF11100D7FAF8 /* QuestionTableViewCell.swift in Sources */,
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,
-				5EE84CDD23CA7F9100BA1627 /* URLBuilder.swift in Sources */,
 				5EB08C6123D97683005C6A73 /* QuestionParser.swift in Sources */,
 				5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */,
 				5EE84CE723CAC61300BA1627 /* AnswerViewController.swift in Sources */,
@@ -461,6 +460,7 @@
 				5EE9DEB123CFB12100D7FAF8 /* String.swift in Sources */,
 				5EE84CAC23CA50A200BA1627 /* SceneDelegate.swift in Sources */,
 				5E76EA5223CEDEC2009E2972 /* LoginViewController.swift in Sources */,
+				5EEBB07523DE88A200CFB96C /* NewPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

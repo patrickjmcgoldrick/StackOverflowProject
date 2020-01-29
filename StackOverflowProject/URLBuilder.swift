@@ -44,6 +44,10 @@ class URLBuilder {
     }
     
     // MARK: Questions
+    func createQuestion() -> String {
+        return "\(questionURL)add"
+    }
+    
     func getQuestionAndAnswersURL(questionId: Int) -> String {
         return "\(questionURL)\(questionId)/?filter=!FnhX5sXiIs.YeksGT.C*q60hqb&site=stackoverflow&\(authGetParams())"
     }
@@ -109,5 +113,14 @@ class URLBuilder {
     
     func authPostParams() -> String {
         return "site=stackoverflow&filter=!FnhX5sXiIs.YeksPCkGy9NDGT6&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
+    }
+    
+    func newPostParams(title: String, body: String) -> String? {
+        let params = "&title=\(title)&body=\(body)"
+        if let encoded = params.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+            
+            return authPostParams() + encoded + "&preview=true"
+        }
+        return nil
     }
 }
