@@ -10,6 +10,7 @@
 		5E76EA5223CEDEC2009E2972 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */; };
 		5E76EA5423CEE22A009E2972 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5323CEE22A009E2972 /* APIKeys.swift */; };
 		5E76EA5923CF8088009E2972 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5823CF8088009E2972 /* Session.swift */; };
+		5E9E9A6323E136A300CC767F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E9A6223E136A300CC767F /* URLBuilder.swift */; };
 		5EB08C5023D912E5005C6A73 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */; };
 		5EB08C5923D91CE2005C6A73 /* CoreDataSaveOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5223D91CE1005C6A73 /* CoreDataSaveOps.swift */; };
 		5EB08C5A23D91CE2005C6A73 /* CoreDataUpdateOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5323D91CE1005C6A73 /* CoreDataUpdateOps.swift */; };
@@ -73,6 +74,7 @@
 		5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E76EA5323CEE22A009E2972 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5E76EA5823CF8088009E2972 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		5E9E9A6223E136A300CC767F /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		5EB08C5223D91CE1005C6A73 /* CoreDataSaveOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSaveOps.swift; sourceTree = "<group>"; };
 		5EB08C5323D91CE1005C6A73 /* CoreDataUpdateOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUpdateOps.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				5E76EA5323CEE22A009E2972 /* APIKeys.swift */,
 				5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */,
 				5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */,
+				5E9E9A6223E136A300CC767F /* URLBuilder.swift */,
 				5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */,
 				5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */,
 				5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */,
@@ -437,6 +440,7 @@
 				5EEBB07323DE561100CFB96C /* QuestionData.swift in Sources */,
 				5E76EA5923CF8088009E2972 /* Session.swift in Sources */,
 				5EE9DEB923CFF11100D7FAF8 /* QuestionTableViewCell.swift in Sources */,
+				5E9E9A6323E136A300CC767F /* URLBuilder.swift in Sources */,
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,
 				5EB08C6123D97683005C6A73 /* QuestionParser.swift in Sources */,
 				5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */,
