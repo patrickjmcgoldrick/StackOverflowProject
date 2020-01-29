@@ -83,6 +83,7 @@ disabled_rules:
 identifier_name:
   excluded:
     - client_id
+    - redirect_uri
     - access_token
     - question_id
     - answer_id
