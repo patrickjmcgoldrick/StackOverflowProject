@@ -13,21 +13,32 @@ class SearchViewController: UIViewController {
     var searchView = SearchView()
     var viewModel = SearchViewModel()
     
+    let addQuestionBarButton: UIBarButtonItem = {
+        let barButton = UIBarButtonItem()
+        barButton.title = "Add"
+        barButton.style = .plain
+        return barButton
+    }()
+
     // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         searchView.viewModel = viewModel
         view = searchView
-        //newPostView.previewButton.addTarget(self, action: #selector(btnActionPreview), for: .touchUpInside)
+        
+        let newPostButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(btnActionNewPost))
+        self.navigationItem.rightBarButtonItem = newPostButton
     }
     
-    func btnActionNewPost(_ sender: Any) {
+    @objc
+    func btnActionNewPost() {
        
+        print("Press bar button item")
+        
         let newPostViewController = NewPostViewController()
-        self.navigationController?.show(newPostViewController, sender: self)
-            //.pushViewController(newPostViewController, animated: true)
-        //performSegue(withIdentifier: "toNewPost", sender: self)
+        self.navigationController?//.show(newPostViewController, sender: self)
+            .pushViewController(newPostViewController, animated: true)
     }
     
     func dateToInt(_ date: Date) -> Int {

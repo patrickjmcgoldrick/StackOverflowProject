@@ -11,13 +11,12 @@ import UIKit
 class NewPostView: UIView {
 
     var viewModel: NewPostViewModel?
-
+        
     var tfTitle: UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Your Title here..."
-        textField.backgroundColor = .purple
-        
+        textField.backgroundColor = .white
         return textField
     }()
    
@@ -56,7 +55,7 @@ class NewPostView: UIView {
     }
     
     func setupView() {
-        backgroundColor = .purple
+        backgroundColor = .systemTeal
         addSubview(tfTitle)
         addSubview(taBody)
         addSubview(previewButton)
