@@ -61,7 +61,8 @@ extension LoginViewController: WKNavigationDelegate {
                 
                 Session.shared.accessToken = access_token
                 print("access_token=\(access_token)")
-                performSegue(withIdentifier: "loginToSearch", sender: self)
+                
+                self.view.window?.rootViewController = UINavigationController(rootViewController: SearchViewController())
             }
         }
 

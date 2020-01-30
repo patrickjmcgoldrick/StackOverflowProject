@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfy-3J-94G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ICa-cb-oaJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Post-->
+        <!--New Question-->
         <scene sceneID="LmH-Hm-Qbu">
             <objects>
                 <viewController id="blG-jE-bax" customClass="NewPostViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XaT-I3-TVq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-Q7-R5u">
-                                <rect key="frame" x="20" y="130" width="374" height="234"/>
+                                <rect key="frame" x="20" y="162" width="374" height="234"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="234" id="Xnw-1m-To7"/>
@@ -27,20 +27,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sec-Ff-sus">
-                                <rect key="frame" x="0.0" y="442" width="414" height="366"/>
+                                <rect key="frame" x="0.0" y="474" width="414" height="388"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-gp-Y68">
-                                <rect key="frame" x="20" y="80" width="374" height="34"/>
+                                <rect key="frame" x="20" y="112" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tG-fC-DZ7">
-                                <rect key="frame" x="180" y="388" width="54" height="30"/>
+                                <rect key="frame" x="180" y="420" width="54" height="30"/>
                                 <state key="normal" title="Preview"/>
-                                <connections>
-                                    <action selector="btnActionPreview:" destination="blG-jE-bax" eventType="touchUpInside" id="o2X-UW-2xS"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -60,18 +57,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4cC-mR-Ar7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Post" id="F4Z-Z6-Ebo">
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="s1n-I0-5Iw">
-                            <connections>
-                                <action selector="btnActionPost:" destination="blG-jE-bax" id="aWK-f0-nOH"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="New Question" id="F4Z-Z6-Ebo">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="s1n-I0-5Iw"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="previewTable" destination="Sec-Ff-sus" id="rzF-QS-YAv"/>
-                        <outlet property="taBody" destination="gWl-Q7-R5u" id="URW-pR-Kub"/>
-                        <outlet property="tfTitle" destination="kgh-gp-Y68" id="x8C-zF-wPG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mpV-ah-uI1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,11 +70,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Xr-Q6-QhG">
-                                <rect key="frame" x="0.0" y="112" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="4nd-vq-2Dm">
@@ -100,7 +88,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Je-98-kwP">
-                                <rect key="frame" x="0.0" y="56" width="394" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="394" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -117,33 +105,27 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stack Overflow" id="PCi-7t-Km8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pJP-c9-2lA">
-                            <connections>
-                                <action selector="btnActionNewPost:" destination="BYZ-38-t0r" id="g03-3O-gND"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pJP-c9-2lA"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchView" destination="3Je-98-kwP" id="52p-FS-9Hq"/>
-                        <outlet property="tableView" destination="3Xr-Q6-QhG" id="0tl-dF-NmF"/>
                         <segue destination="5jQ-Je-mQm" kind="show" identifier="toAnswers" id="6Zr-kZ-YNS"/>
                         <segue destination="blG-jE-bax" kind="show" identifier="toNewPost" id="Lyt-K7-j9D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868.115942028986" y="80.357142857142847"/>
+            <point key="canvasLocation" x="3778.2608695652175" y="80.357142857142847"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="9nE-KU-Rnn">
             <objects>
                 <viewController id="5jQ-Je-mQm" customClass="QuestionViewController" customModule="StackOverflowProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xpq-4y-PP0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U4T-8U-iRi">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" rowHeight="237" id="KdZ-E8-xhH" customClass="QuestionTableViewCell" customModule="StackOverflowProject" customModuleProvider="target">
@@ -313,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVK-ZP-aDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3781.1594202898555" y="79.6875"/>
+            <point key="canvasLocation" x="4691.304347826087" y="79.6875"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="HGB-r3-31T">
@@ -324,7 +306,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAu-To-5NA">
-                                <rect key="frame" x="0.0" y="158" width="414" height="704"/>
+                                <rect key="frame" x="0.0" y="202" width="414" height="660"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -332,7 +314,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzN-0d-iT7">
-                                <rect key="frame" x="134" y="76" width="146" height="30"/>
+                                <rect key="frame" x="134" y="120" width="146" height="30"/>
                                 <state key="normal" title="Login Stack Overflow"/>
                                 <connections>
                                     <action selector="btnActionLogin:" destination="vfy-3J-94G" eventType="touchUpInside" id="3SW-N4-RHQ"/>
@@ -353,31 +335,30 @@
                     <navigationItem key="navigationItem" id="HYv-3k-e7V"/>
                     <connections>
                         <outlet property="webView" destination="dAu-To-5NA" id="ce9-Pn-vYT"/>
-                        <segue destination="Sbb-H9-PbU" kind="show" identifier="loginToSearch" id="Olu-HU-U7T"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="zvN-gE-isr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVT-eS-NTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="80"/>
+            <point key="canvasLocation" x="1773.913043478261" y="79.6875"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="1W9-t1-JYs">
+        <scene sceneID="GBH-iF-Brq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sbb-H9-PbU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ICa-cb-oaJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="kxf-to-rQ1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gxu-p1-EQW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oN7-sI-13o">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wI3-Gb-eCV"/>
+                        <segue destination="vfy-3J-94G" kind="relationship" relationship="rootViewController" id="b7o-tL-ew7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zDM-4I-8bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXI-RG-Kab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="80.357142857142847"/>
+            <point key="canvasLocation" x="863.768115942029" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
