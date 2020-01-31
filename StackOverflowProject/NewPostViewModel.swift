@@ -13,7 +13,7 @@ class NewPostViewModel {
     var previewQuestion: QuestionData?
     var urlBuilder = URLBuilder()
     
-    func updatePreview(title: String, body: String, tags: String, updatedPreview: @escaping ()-> Void) {
+    func updatePreview(title: String, body: String, tags: String, updatedPreview: @escaping () -> Void) {
         
         if isQuestionDataValid(title, body, tags) {
             createNewQuestion(title, body, tags) {

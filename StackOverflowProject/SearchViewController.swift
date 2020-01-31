@@ -12,13 +12,6 @@ class SearchViewController: UIViewController {
         
     var searchView = SearchView()
     var viewModel = SearchViewModel()
-    
-    let addQuestionBarButton: UIBarButtonItem = {
-        let barButton = UIBarButtonItem()
-        barButton.title = "Add"
-        barButton.style = .plain
-        return barButton
-    }()
 
     // MARK: View Did Load
     override func viewDidLoad() {

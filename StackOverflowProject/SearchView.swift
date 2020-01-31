@@ -15,7 +15,6 @@ class SearchView: UIView {
     var searchBar: UISearchBar = {
         let searchbar = UISearchBar()
         searchbar.translatesAutoresizingMaskIntoConstraints = false
-        searchbar.backgroundColor = .systemPink
         return searchbar
     }()
     

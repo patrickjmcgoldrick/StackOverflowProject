@@ -41,6 +41,5 @@ class CoreDataDeleteOps {
         if question.count != 0 {
             coreDataManager.batchDelete(objects: question, context: context)
         }
-
     }
 }

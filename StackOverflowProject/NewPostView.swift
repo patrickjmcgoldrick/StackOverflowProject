@@ -31,8 +31,6 @@ class NewPostView: UIView {
     var previewTable: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         return tableView
     }()
     
@@ -40,7 +38,6 @@ class NewPostView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Preview", for: .normal)
-        
         return button
     }()
     

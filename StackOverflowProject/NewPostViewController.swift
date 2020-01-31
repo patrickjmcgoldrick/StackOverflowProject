@@ -41,7 +41,4 @@ class NewPostViewController: UIViewController {
     @objc
     func btnActionPost() {
     }
-    
-
 }
-

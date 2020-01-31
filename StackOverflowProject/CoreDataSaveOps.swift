@@ -36,7 +36,6 @@ class CoreDataSaveOps {
         answerManagedObject.score = answerObject.score
         answerManagedObject.body = answerObject.body
 
-        
         coreDataManager.saveContext(context: context)
     }
 }

@@ -21,7 +21,6 @@ class URLBuilder {
     
     let answerURL = "https://api.stackexchange.com/2.2/answers/"
 
-    
     // MARK: LOGIN - OAUTH 2.0
     // build up OAUTH 2.0 Login URL for StackOverflow
     func getLoginPageURL() -> String {
