@@ -148,9 +148,6 @@
                                                         <constraint firstAttribute="width" secondItem="u0b-Ni-FAn" secondAttribute="height" multiplier="1:1" id="4vJ-da-Eje"/>
                                                     </constraints>
                                                     <state key="normal" image="up"/>
-                                                    <connections>
-                                                        <action selector="btnActionQuestionUp:" destination="KdZ-E8-xhH" eventType="touchUpInside" id="pF7-Cv-0LH"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-rO-deR">
                                                     <rect key="frame" x="346" y="83" width="48" height="48"/>
@@ -159,9 +156,6 @@
                                                         <constraint firstAttribute="width" secondItem="ujD-rO-deR" secondAttribute="height" multiplier="1:1" id="HIJ-d2-sl1"/>
                                                     </constraints>
                                                     <state key="normal" image="down"/>
-                                                    <connections>
-                                                        <action selector="btnActionQuestionDown:" destination="KdZ-E8-xhH" eventType="touchUpInside" id="KKK-LA-3t0"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGv-R0-Uaw">
                                                     <rect key="frame" x="363.5" y="59" width="13" height="24"/>
@@ -176,9 +170,6 @@
                                                         <constraint firstAttribute="width" secondItem="Lav-c6-mh3" secondAttribute="height" multiplier="1:1" id="dLB-pg-vqo"/>
                                                     </constraints>
                                                     <state key="normal" image="star_empty"/>
-                                                    <connections>
-                                                        <action selector="btnActionFavorite:" destination="KdZ-E8-xhH" eventType="touchUpInside" id="TCf-UW-mpI"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -197,10 +188,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="btnFavorited" destination="Lav-c6-mh3" id="eFY-u5-pjg"/>
-                                            <outlet property="btnQuestionDown" destination="ujD-rO-deR" id="4V1-pd-0Tw"/>
-                                            <outlet property="btnQuestionUp" destination="u0b-Ni-FAn" id="1gq-pu-bsk"/>
-                                            <outlet property="lblBody" destination="27b-RD-BUl" id="UCm-Mp-I8s"/>
                                             <outlet property="lblScore" destination="TGv-R0-Uaw" id="ci6-Gb-juj"/>
                                         </connections>
                                     </tableViewCell>
@@ -224,9 +211,6 @@
                                                         <constraint firstAttribute="width" secondItem="NoU-tG-Aaq" secondAttribute="height" multiplier="1:1" id="t5s-oo-W1P"/>
                                                     </constraints>
                                                     <state key="normal" image="up"/>
-                                                    <connections>
-                                                        <action selector="btnActionUpvote:" destination="hpg-BU-AwC" eventType="touchUpInside" id="MLw-2L-PB7"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgB-8t-B4T">
                                                     <rect key="frame" x="346" y="83" width="48" height="48"/>
@@ -235,9 +219,6 @@
                                                         <constraint firstAttribute="width" constant="48" id="Sqk-jx-9BY"/>
                                                     </constraints>
                                                     <state key="normal" image="down"/>
-                                                    <connections>
-                                                        <action selector="btnActionDownvote:" destination="hpg-BU-AwC" eventType="touchUpInside" id="LJ8-cD-9ep"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYo-yp-9qO">
                                                     <rect key="frame" x="363.5" y="59" width="13" height="24"/>
@@ -268,13 +249,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="zVk-gP-YeD" secondAttribute="trailing" id="uAf-0X-9EV"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="btnAnswerDownvote" destination="UgB-8t-B4T" id="HHZ-bf-K9B"/>
-                                            <outlet property="btnAnswerUpvote" destination="NoU-tG-Aaq" id="lNw-U2-M5z"/>
-                                            <outlet property="imgAccepted" destination="iYD-yv-8gR" id="LJN-Ab-mEB"/>
-                                            <outlet property="lblBody" destination="zVk-gP-YeD" id="LjY-Kp-qAC"/>
-                                            <outlet property="lblScore" destination="PYo-yp-9qO" id="F3P-jd-vs0"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -289,9 +263,6 @@
                         <viewLayoutGuide key="safeArea" id="MwU-7Z-eux"/>
                     </view>
                     <navigationItem key="navigationItem" id="oqx-F1-C4H"/>
-                    <connections>
-                        <outlet property="tableView" destination="U4T-8U-iRi" id="PtL-n6-hHV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVK-ZP-aDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

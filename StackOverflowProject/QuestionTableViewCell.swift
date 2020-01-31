@@ -7,46 +7,42 @@
 //
 
 import UIKit
-import WebKit
 
-class QuestionTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var lblBody: UILabel!
+class QuestionTableViewCell: PostTableViewCell {
     
-    @IBOutlet weak var btnFavorited: UIButton!
+    var btnFavorited: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+            
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        addSubview(btnFavorited)
+        
+        btnFavorited.topAnchor.constraint(equalTo: btnDownVote.bottomAnchor).isActive = true
+        btnFavorited.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
+        btnFavorited.widthAnchor.constraint(equalToConstant: 48).isActive = true
+        btnFavorited.heightAnchor.constraint(equalToConstant: 48).isActive = true
+    }
     
-    @IBOutlet weak var lblScore: UILabel!
-    
-    @IBOutlet weak var btnQuestionUp: UIButton!
-    
-    @IBOutlet weak var btnQuestionDown: UIButton!
-    
-    var updateDelegate: UpdateDelegate?
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        print("selected")
-//    }
-    
-    @IBAction func btnActionFavorite(_ sender: Any) {
+    @objc
+    func btnActionFavorite(_ sender: Any) {
         if let delegate = updateDelegate {
             delegate.updateFavorite()
         }
     }
     
-    @IBAction func btnActionQuestionUp(_ sender: Any) {
+    @objc
+    func btnActionQuestionUp(_ sender: Any) {
         if let delgate = updateDelegate {
             delgate.updateUpvote(row: tag)
         }
     }
     
-    @IBAction func btnActionQuestionDown(_ sender: Any) {
+    @objc
+    func btnActionQuestionDown(_ sender: Any) {
         if let delegate = updateDelegate {
             delegate.updateDownvote(row: tag)
         }

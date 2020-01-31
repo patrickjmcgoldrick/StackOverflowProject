@@ -8,23 +8,29 @@
 
 import UIKit
 
-class AnswerTableViewCell: UITableViewCell {
+class AnswerTableViewCell: PostTableViewCell {
+        
+    var imgAccepted: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
 
-    @IBOutlet weak var lblBody: UILabel!
-   
-    @IBOutlet weak var imgAccepted: UIImageView!
-    
-    @IBOutlet weak var lblScore: UILabel!
-    
-    @IBOutlet weak var btnAnswerUpvote: UIButton!
-    
-    @IBOutlet weak var btnAnswerDownvote: UIButton!
-    
-    var updateDelegate: UpdateDelegate?
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        addSubview(imgAccepted)
+        
+        imgAccepted.topAnchor.constraint(equalTo: btnDownVote.bottomAnchor).isActive = true
+        imgAccepted.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
+        imgAccepted.widthAnchor.constraint(equalToConstant: 48).isActive = true
+        imgAccepted.heightAnchor.constraint(equalToConstant: 48).isActive = true
+    }
     
     // tags are being set to row + 1 for Answers
     // to distingush them from the question
-    @IBAction private func btnActionUpvote(_ sender: Any) {
+    @objc
+    func btnActionUpvote(_ sender: Any) {
         if let delegate = updateDelegate {
             delegate.updateUpvote(row: tag)
         }
@@ -32,7 +38,8 @@ class AnswerTableViewCell: UITableViewCell {
     
     // tags are being set to row + 1 for Answers
     // to distingush them from the question
-    @IBAction private func btnActionDownvote(_ sender: Any) {
+    @objc
+    func btnActionDownvote(_ sender: Any) {
         if let delegate = updateDelegate {
             delegate.updateDownvote(row: tag)
         }
