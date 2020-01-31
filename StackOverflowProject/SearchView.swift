@@ -62,7 +62,7 @@ extension SearchView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+        
         guard let question = viewModel?.questions[indexPath.row] else { return UITableViewCell() }
         
         let cell = UITableViewCell()
@@ -77,23 +77,22 @@ extension SearchView: UITableViewDataSource {
 extension SearchView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                    
-        //performSegue(withIdentifier: "toAnswers", sender: nil)
-    }
-    
-    /*
-    // MARK: VC Transition Prep
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- 
-        if let destination = segue.destination as? QuestionViewController {
-            
-            if let row = tableView.indexPathForSelectedRow?.row {
-            
-                destination.questionId = questions[row].question_id
-            }
+        
+        guard let questionId = viewModel?.questions[indexPath.row].question_id else { return }
+        
+        print(questionId)
+        
+        let questionDetailVC = QuestionDetailViewController()
+        questionDetailVC.viewModel.questionId = questionId
+        if let navController = self.window?.rootViewController {
+            navController.show(questionDetailVC, sender: self)
+        } else {
+            print("navController is nil?")
+            print(self.window)
+            print(self.window?.rootViewController)
         }
+            //.pushViewController(questionDetailVC, animated: true)
     }
- */
 }
 
 // MARK: Search Bar Delegate

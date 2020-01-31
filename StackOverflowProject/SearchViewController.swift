@@ -26,17 +26,7 @@ class SearchViewController: UIViewController {
     
     @objc
     func btnActionNewPost() {
-       
-        print("Press bar button item")
-        
-        let newPostViewController = NewPostViewController()
-        self.navigationController?//.show(newPostViewController, sender: self)
-            .pushViewController(newPostViewController, animated: true)
-    }
-    
-    func dateToInt(_ date: Date) -> Int {
-        
-        let timeInterval = date.timeIntervalSince1970
-        return  Int(timeInterval)
+        self.navigationController?
+            .pushViewController(NewPostViewController(), animated: true)
     }
 }

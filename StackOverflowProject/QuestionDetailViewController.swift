@@ -7,18 +7,18 @@
 //
 
 import UIKit
-import WebKit
 
 class QuestionDetailViewController: UIViewController {
     
-    var viewModel = QuestionDetailViewModel()
     var questionView = QuestionDetailView()
+    var viewModel = QuestionDetailViewModel()
    
     // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         questionView.viewModel = viewModel
+        view = questionView
         
         viewModel.loadQuestion() {
             DispatchQueue.main.async {
