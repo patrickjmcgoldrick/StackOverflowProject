@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class QuestionViewController: UIViewController {
+class QuestionDetailViewController: UIViewController {
     
     var viewModel = QuestionDetailViewModel()
     var questionView = QuestionDetailView()

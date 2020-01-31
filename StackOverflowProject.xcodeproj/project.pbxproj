@@ -15,6 +15,8 @@
 		5E76EA5423CEE22A009E2972 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5323CEE22A009E2972 /* APIKeys.swift */; };
 		5E76EA5923CF8088009E2972 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5823CF8088009E2972 /* Session.swift */; };
 		5E8D423B23E3B3A100D4D6B9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D423A23E3B3A100D4D6B9 /* PostTableViewCell.swift */; };
+		5E8D423D23E3D8B100D4D6B9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D423C23E3D8B100D4D6B9 /* LoginView.swift */; };
+		5E8D423F23E3D8BF00D4D6B9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D423E23E3D8BF00D4D6B9 /* LoginViewModel.swift */; };
 		5E9E9A6323E136A300CC767F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E9A6223E136A300CC767F /* URLBuilder.swift */; };
 		5E9E9A6523E1545000CC767F /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E9A6423E1545000CC767F /* NewPostView.swift */; };
 		5E9E9A6723E1615100CC767F /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E9A6623E1615100CC767F /* NewPostViewModel.swift */; };
@@ -31,7 +33,6 @@
 		5EE84CAA23CA50A200BA1627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CA923CA50A200BA1627 /* AppDelegate.swift */; };
 		5EE84CAC23CA50A200BA1627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */; };
 		5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */; };
-		5EE84CB123CA50A200BA1627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE84CAF23CA50A200BA1627 /* Main.storyboard */; };
 		5EE84CB423CA50A200BA1627 /* StackOverflowProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CB223CA50A200BA1627 /* StackOverflowProject.xcdatamodeld */; };
 		5EE84CB623CA50A400BA1627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE84CB523CA50A400BA1627 /* Assets.xcassets */; };
 		5EE84CB923CA50A400BA1627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE84CB723CA50A400BA1627 /* LaunchScreen.storyboard */; };
@@ -41,8 +42,7 @@
 		5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE023CA905D00BA1627 /* SearchData.swift */; };
 		5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE223CA921C00BA1627 /* SearchParser.swift */; };
 		5EE84CE523CA941700BA1627 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE84CE423CA941700BA1627 /* search.json */; };
-		5EE84CE723CAC61300BA1627 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */; };
-		5EE84CE923CB023F00BA1627 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */; };
+		5EE84CE923CB023F00BA1627 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CE823CB023F00BA1627 /* QuestionDetailViewController.swift */; };
 		5EE9DEAD23CFAF3A00D7FAF8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEAC23CFAF3A00D7FAF8 /* Data.swift */; };
 		5EE9DEB123CFB12100D7FAF8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9DEB023CFB12100D7FAF8 /* String.swift */; };
 		5EE9DEB423CFE83900D7FAF8 /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9DEB323CFE83900D7FAF8 /* question.json */; };
@@ -74,10 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		081290650D71684D93683AC0 /* Pods-StackOverflowProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProject.debug.xcconfig"; path = "Target Support Files/Pods-StackOverflowProject/Pods-StackOverflowProject.debug.xcconfig"; sourceTree = "<group>"; };
-		24217EDFB03FCD5BDE279568 /* Pods-StackOverflowProject-StackOverflowProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProject-StackOverflowProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-StackOverflowProject-StackOverflowProjectUITests/Pods-StackOverflowProject-StackOverflowProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		28138F9BE041760D7C50DDCA /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowProject_StackOverflowProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47B5F221D382CCD3510CE8EF /* Pods-StackOverflowProject-StackOverflowProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProject-StackOverflowProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-StackOverflowProject-StackOverflowProjectUITests/Pods-StackOverflowProject-StackOverflowProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E4CFA7E23E2696E00800E8C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		5E4CFA8023E2698C00800E8C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5E4CFA8423E29DB000800E8C /* QuestionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +83,8 @@
 		5E76EA5323CEE22A009E2972 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5E76EA5823CF8088009E2972 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		5E8D423A23E3B3A100D4D6B9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		5E8D423C23E3D8B100D4D6B9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5E8D423E23E3D8BF00D4D6B9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5E9E9A6223E136A300CC767F /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		5E9E9A6423E1545000CC767F /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		5E9E9A6623E1615100CC767F /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
@@ -103,7 +102,6 @@
 		5EE84CA923CA50A200BA1627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		5EE84CB023CA50A200BA1627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EE84CB323CA50A200BA1627 /* StackOverflowProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StackOverflowProject.xcdatamodel; sourceTree = "<group>"; };
 		5EE84CB523CA50A400BA1627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EE84CB823CA50A400BA1627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,8 +116,7 @@
 		5EE84CE023CA905D00BA1627 /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		5EE84CE223CA921C00BA1627 /* SearchParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParser.swift; sourceTree = "<group>"; };
 		5EE84CE423CA941700BA1627 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = search.json; path = testFiles/search.json; sourceTree = SOURCE_ROOT; };
-		5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
-		5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		5EE84CE823CB023F00BA1627 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		5EE9DEAC23CFAF3A00D7FAF8 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5EE9DEB023CFB12100D7FAF8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5EE9DEB323CFE83900D7FAF8 /* question.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = question.json; path = testFiles/question.json; sourceTree = SOURCE_ROOT; };
@@ -131,9 +128,6 @@
 		5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7F652C19E2D1B192448EF548 /* Pods_StackOverflowProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804952038DC44A68E2A21F1D /* Pods_StackOverflowProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		929EF3A137334C7549BE26E2 /* Pods-StackOverflowProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProjectTests.release.xcconfig"; path = "Target Support Files/Pods-StackOverflowProjectTests/Pods-StackOverflowProjectTests.release.xcconfig"; sourceTree = "<group>"; };
-		9ABCA001689ED6AF58E1858C /* Pods-StackOverflowProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-StackOverflowProjectTests/Pods-StackOverflowProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9DCABFE9354D6EDA02ED0099 /* Pods-StackOverflowProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowProject.release.xcconfig"; path = "Target Support Files/Pods-StackOverflowProject/Pods-StackOverflowProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,19 +157,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2CD324F3A83FE2EC55FED56D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				081290650D71684D93683AC0 /* Pods-StackOverflowProject.debug.xcconfig */,
-				9DCABFE9354D6EDA02ED0099 /* Pods-StackOverflowProject.release.xcconfig */,
-				24217EDFB03FCD5BDE279568 /* Pods-StackOverflowProject-StackOverflowProjectUITests.debug.xcconfig */,
-				47B5F221D382CCD3510CE8EF /* Pods-StackOverflowProject-StackOverflowProjectUITests.release.xcconfig */,
-				9ABCA001689ED6AF58E1858C /* Pods-StackOverflowProjectTests.debug.xcconfig */,
-				929EF3A137334C7549BE26E2 /* Pods-StackOverflowProjectTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		5D9B860234D3CAE6D356CFF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +165,51 @@
 				7F652C19E2D1B192448EF548 /* Pods_StackOverflowProjectTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E8D424023E3E62200D4D6B9 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */,
+				5E8D423C23E3D8B100D4D6B9 /* LoginView.swift */,
+				5E8D423E23E3D8BF00D4D6B9 /* LoginViewModel.swift */,
+				5E76EA5823CF8088009E2972 /* Session.swift */,
+			);
+			name = LoginVC;
+			sourceTree = "<group>";
+		};
+		5E8D424123E3E64E00D4D6B9 /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */,
+				5E4CFA7E23E2696E00800E8C /* SearchView.swift */,
+				5E4CFA8023E2698C00800E8C /* SearchViewModel.swift */,
+			);
+			name = SearchVC;
+			sourceTree = "<group>";
+		};
+		5E8D424223E3E67000D4D6B9 /* NewPostVC */ = {
+			isa = PBXGroup;
+			children = (
+				5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */,
+				5E9E9A6423E1545000CC767F /* NewPostView.swift */,
+				5E9E9A6623E1615100CC767F /* NewPostViewModel.swift */,
+			);
+			name = NewPostVC;
+			sourceTree = "<group>";
+		};
+		5E8D424323E3E6A500D4D6B9 /* QustionDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				5EE84CE823CB023F00BA1627 /* QuestionDetailViewController.swift */,
+				5E4CFA8623E29EC100800E8C /* QuestionDetailView.swift */,
+				5E4CFA8423E29DB000800E8C /* QuestionDetailViewModel.swift */,
+				5E8D423A23E3B3A100D4D6B9 /* PostTableViewCell.swift */,
+				5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */,
+				5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */,
+				5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */,
+			);
+			name = QustionDetailVC;
 			sourceTree = "<group>";
 		};
 		5EB08C5123D91CB5005C6A73 /* CoreData */ = {
@@ -207,7 +233,6 @@
 				5EE84CC223CA50A500BA1627 /* StackOverflowProjectTests */,
 				5EE84CCD23CA50A500BA1627 /* StackOverflowProjectUITests */,
 				5EE84CA723CA50A200BA1627 /* Products */,
-				2CD324F3A83FE2EC55FED56D /* Pods */,
 				5D9B860234D3CAE6D356CFF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -230,28 +255,15 @@
 				5EE9DEB223CFB89200D7FAF8 /* Extension */,
 				5EE84CA923CA50A200BA1627 /* AppDelegate.swift */,
 				5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */,
-				5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */,
 				5E76EA5323CEE22A009E2972 /* APIKeys.swift */,
-				5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */,
-				5E4CFA7E23E2696E00800E8C /* SearchView.swift */,
-				5E4CFA8023E2698C00800E8C /* SearchViewModel.swift */,
-				5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */,
-				5E9E9A6623E1615100CC767F /* NewPostViewModel.swift */,
-				5E9E9A6423E1545000CC767F /* NewPostView.swift */,
 				5E9E9A6223E136A300CC767F /* URLBuilder.swift */,
-				5EE84CE823CB023F00BA1627 /* QuestionViewController.swift */,
-				5E4CFA8423E29DB000800E8C /* QuestionDetailViewModel.swift */,
-				5E4CFA8623E29EC100800E8C /* QuestionDetailView.swift */,
-				5EE9DEB823CFF11100D7FAF8 /* QuestionTableViewCell.swift */,
-				5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */,
-				5E8D423A23E3B3A100D4D6B9 /* PostTableViewCell.swift */,
-				5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */,
-				5EE84CE623CAC61300BA1627 /* AnswerViewController.swift */,
 				5EE84CDE23CA820A00BA1627 /* NetworkManager.swift */,
+				5E8D424023E3E62200D4D6B9 /* LoginVC */,
+				5E8D424123E3E64E00D4D6B9 /* SearchVC */,
+				5E8D424223E3E67000D4D6B9 /* NewPostVC */,
+				5E8D424323E3E6A500D4D6B9 /* QustionDetailVC */,
 				5EE84CB523CA50A400BA1627 /* Assets.xcassets */,
 				5EE84CB723CA50A400BA1627 /* LaunchScreen.storyboard */,
-				5EE84CAF23CA50A200BA1627 /* Main.storyboard */,
-				5E76EA5823CF8088009E2972 /* Session.swift */,
 				5EE84CBA23CA50A400BA1627 /* Info.plist */,
 				5EE84CB223CA50A200BA1627 /* StackOverflowProject.xcdatamodeld */,
 			);
@@ -408,7 +420,6 @@
 			files = (
 				5EE84CB923CA50A400BA1627 /* LaunchScreen.storyboard in Resources */,
 				5EE84CB623CA50A400BA1627 /* Assets.xcassets in Resources */,
-				5EE84CB123CA50A200BA1627 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,14 +475,15 @@
 				5E9E9A6323E136A300CC767F /* URLBuilder.swift in Sources */,
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,
 				5EB08C6123D97683005C6A73 /* QuestionParser.swift in Sources */,
+				5E8D423F23E3D8BF00D4D6B9 /* LoginViewModel.swift in Sources */,
 				5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */,
-				5EE84CE723CAC61300BA1627 /* AnswerViewController.swift in Sources */,
 				5E4CFA7F23E2696E00800E8C /* SearchView.swift in Sources */,
 				5EB08C5D23D91CE2005C6A73 /* CoreDataFetchOps.swift in Sources */,
 				5EB08C5C23D91CE2005C6A73 /* CoreDataManager.swift in Sources */,
 				5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */,
 				5E4CFA8723E29EC100800E8C /* QuestionDetailView.swift in Sources */,
 				5E4CFA8523E29DB000800E8C /* QuestionDetailViewModel.swift in Sources */,
+				5E8D423D23E3D8B100D4D6B9 /* LoginView.swift in Sources */,
 				5E4CFA8123E2698C00800E8C /* SearchViewModel.swift in Sources */,
 				5E9E9A6723E1615100CC767F /* NewPostViewModel.swift in Sources */,
 				5EE84CDF23CA820A00BA1627 /* NetworkManager.swift in Sources */,
@@ -483,7 +495,7 @@
 				5EB08C5E23D91CE2005C6A73 /* AnswerModel.swift in Sources */,
 				5EB08C5A23D91CE2005C6A73 /* CoreDataUpdateOps.swift in Sources */,
 				5E76EA5423CEE22A009E2972 /* APIKeys.swift in Sources */,
-				5EE84CE923CB023F00BA1627 /* QuestionViewController.swift in Sources */,
+				5EE84CE923CB023F00BA1627 /* QuestionDetailViewController.swift in Sources */,
 				5EE84CAA23CA50A200BA1627 /* AppDelegate.swift in Sources */,
 				5EE84CB423CA50A200BA1627 /* StackOverflowProject.xcdatamodeld in Sources */,
 				5EB08C5923D91CE2005C6A73 /* CoreDataSaveOps.swift in Sources */,
@@ -528,14 +540,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5EE84CAF23CA50A200BA1627 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EE84CB023CA50A200BA1627 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5EE84CB723CA50A400BA1627 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
