@@ -16,8 +16,19 @@ class AnswerTableViewCell: PostTableViewCell {
         return imageView
     }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+     
+        setupViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        assertionFailure("init(coder:) has not been implemented")
+    }
+    
+    override func setupViews() {
+        super.setupViews()
         // Initialization code
         addSubview(imgAccepted)
         

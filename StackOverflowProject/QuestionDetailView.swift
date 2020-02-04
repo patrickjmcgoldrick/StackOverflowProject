@@ -36,6 +36,7 @@ class QuestionDetailView: UIView {
         tableView.dataSource = self
         tableView.register(QuestionTableViewCell.self, forCellReuseIdentifier: "QuestionCell")
         tableView.register(AnswerTableViewCell.self, forCellReuseIdentifier: "AnswerCell")
+        
         tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -62,7 +63,8 @@ extension QuestionDetailView: UITableViewDataSource {
                 return "Question:"
             }
         } else {
-            return "\(String(describing: viewModel?.answers.count)) Answers"
+            guard let model = viewModel else { return "" }
+            return "\(model.answers.count) Answers"
         }
     }
     
@@ -78,8 +80,10 @@ extension QuestionDetailView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
+            print("LOOK for question")
             return getQuestionCell(indexPath: indexPath)
         } else {
+            print("LOOK for answer")
             return getAnswerCell(indexPath: indexPath)
         }
     }
@@ -88,27 +92,26 @@ extension QuestionDetailView: UITableViewDataSource {
     func getQuestionCell(indexPath: IndexPath) -> UITableViewCell {
         
         guard let post = viewModel?.question else { return UITableViewCell() }
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionTableViewCell
             else { return UITableViewCell() }
         cell.tag = 0
         cell.updateDelegate = self
         cell.lblBody.text = post.body.html2String
         cell.lblScore.text = post.score.description
         if post.upvoted {
-            cell.btnUpVote.imageView?.image = UIImage(imageLiteralResourceName: "up")
+            cell.btnUpVote.isHighlighted = true
         } else {
-            cell.btnUpVote.imageView?.image = UIImage(imageLiteralResourceName: "up_grey")
+            cell.btnUpVote.isHighlighted = false
         }
         if post.downvoted {
-            cell.btnDownVote.imageView?.image = UIImage(imageLiteralResourceName: "down")
+            cell.btnUpVote.isHighlighted = true
         } else {
-            cell.btnDownVote.imageView?.image = UIImage(imageLiteralResourceName: "down_grey")
+            cell.btnUpVote.isHighlighted = false
         }
         if post.favorited {
-            cell.btnFavorited.imageView?.image = UIImage(imageLiteralResourceName: "star")
+            cell.btnUpVote.isHighlighted = true
         } else {
-            cell.btnFavorited.imageView?.image = UIImage(imageLiteralResourceName: "star_empty")
+            cell.btnUpVote.isHighlighted = false
         }
         return cell
     }
@@ -116,7 +119,7 @@ extension QuestionDetailView: UITableViewDataSource {
     // MARK: Answer Cell
     func getAnswerCell(indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell") as? AnswerTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath) as? AnswerTableViewCell
             else { return UITableViewCell() }
         
         guard let answer = viewModel?.answers[indexPath.row] else { return UITableViewCell() }
@@ -126,15 +129,13 @@ extension QuestionDetailView: UITableViewDataSource {
         cell.lblBody.text = answer.body
         cell.lblScore.text = answer.score.description
         if answer.upvoted {
-            cell.btnUpVote.imageView?.image = UIImage(imageLiteralResourceName: "up")
+            cell.btnUpVote.isHighlighted = true
         } else {
-            cell.btnUpVote.imageView?.image = UIImage(imageLiteralResourceName: "up_grey")
-        }
+            cell.btnUpVote.isHighlighted = false        }
         if answer.downvoted {
-            cell.btnDownVote.imageView?.image = UIImage(imageLiteralResourceName: "down")
+            cell.btnUpVote.isHighlighted = true
         } else {
-            cell.btnDownVote.imageView?.image = UIImage(imageLiteralResourceName: "down_grey")
-        }
+            cell.btnUpVote.isHighlighted = false        }
         if answer.is_accepted {
             cell.imgAccepted.image = UIImage(imageLiteralResourceName: "checkmark")
         } else {

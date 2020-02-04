@@ -18,6 +18,7 @@ class PostTableViewCell: UITableViewCell {
     var lblBody: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
         return label
     }()
     
@@ -30,17 +31,31 @@ class PostTableViewCell: UITableViewCell {
     var btnUpVote: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(imageLiteralResourceName: "up_grey"), for: .normal)
+        button.setImage(UIImage(imageLiteralResourceName: "up"), for: .highlighted)
         return button
     }()
     
     var btnDownVote: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(imageLiteralResourceName: "down_grey"), for: .normal)
+        button.setImage(UIImage(imageLiteralResourceName: "down"), for: .highlighted)
         return button
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+     
+        setupViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        assertionFailure("init(coder:) has not been implemented")
+    }
+    
+    func setupViews() {
         // Initialization code
         addSubview(lblBody)
         addSubview(btnUpVote)
