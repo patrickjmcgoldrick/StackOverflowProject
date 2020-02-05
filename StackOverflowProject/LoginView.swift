@@ -10,8 +10,6 @@ import UIKit
 import WebKit
 
 class LoginView: UIView {
-
-    var viewModel: LoginViewModel?
     
     var webView: WKWebView = {
         let webview = WKWebView()
@@ -78,7 +76,10 @@ extension LoginView: WKNavigationDelegate {
 
                 let access_token = String(finalElements[1])
                 
-                Session.shared.accessToken = access_token
+                //Session.shared.accessToken = access_token
+               
+            
+                UserDefaults.standard.set(access_token, forKey: K.Key.accessToken)
                 print("access_token=\(access_token)")
                 
                 self.window?.rootViewController = UINavigationController(rootViewController: SearchViewController())

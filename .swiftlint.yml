@@ -1,6 +1,5 @@
 included:
   - StackOverflowProject
-  - Source
 excluded:
   - Tests/SwiftLintFrameworkTests/Resources
   - Tests

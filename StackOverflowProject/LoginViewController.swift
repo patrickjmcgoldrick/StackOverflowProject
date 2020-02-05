@@ -11,15 +11,14 @@ import UIKit
 class LoginViewController: UIViewController {
              
     let loginView = LoginView()
-    let viewModel = LoginViewModel()
     
     // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginView.viewModel = viewModel
         loginView.loginButton.addTarget(self, action: #selector(btnActionLogin), for: .touchUpInside)
         view = loginView
+        btnActionLogin()
     }
     
     @objc

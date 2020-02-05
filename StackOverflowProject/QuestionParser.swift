@@ -28,6 +28,7 @@ class QuestionParser {
                 parsed(questionItems)
             } catch {
                 print("Error Parsing JSON: \(error.localizedDescription)")
+                print(String(data: data, encoding: .utf8)!)
             }
         }
     }

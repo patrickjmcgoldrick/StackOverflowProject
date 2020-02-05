@@ -13,13 +13,14 @@
 		5E4CFA8723E29EC100800E8C /* QuestionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CFA8623E29EC100800E8C /* QuestionDetailView.swift */; };
 		5E76EA5223CEDEC2009E2972 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */; };
 		5E76EA5423CEE22A009E2972 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5323CEE22A009E2972 /* APIKeys.swift */; };
-		5E76EA5923CF8088009E2972 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EA5823CF8088009E2972 /* Session.swift */; };
 		5E8D423B23E3B3A100D4D6B9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D423A23E3B3A100D4D6B9 /* PostTableViewCell.swift */; };
 		5E8D423D23E3D8B100D4D6B9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D423C23E3D8B100D4D6B9 /* LoginView.swift */; };
-		5E8D423F23E3D8BF00D4D6B9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D423E23E3D8BF00D4D6B9 /* LoginViewModel.swift */; };
 		5E9E9A6323E136A300CC767F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E9A6223E136A300CC767F /* URLBuilder.swift */; };
 		5E9E9A6523E1545000CC767F /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E9A6423E1545000CC767F /* NewPostView.swift */; };
 		5E9E9A6723E1615100CC767F /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E9A6623E1615100CC767F /* NewPostViewModel.swift */; };
+		5EA20F6A23E94860001EC156 /* SearchVMAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA20F6923E94860001EC156 /* SearchVMAppTests.swift */; };
+		5EA20F7223E9FC5F001EC156 /* NewPostVMAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA20F7123E9FC5F001EC156 /* NewPostVMAppTests.swift */; };
+		5EA20F7423E9FC76001EC156 /* QuestionDetailVMAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA20F7323E9FC76001EC156 /* QuestionDetailVMAppTests.swift */; };
 		5EB08C5023D912E5005C6A73 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */; };
 		5EB08C5923D91CE2005C6A73 /* CoreDataSaveOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5223D91CE1005C6A73 /* CoreDataSaveOps.swift */; };
 		5EB08C5A23D91CE2005C6A73 /* CoreDataUpdateOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5323D91CE1005C6A73 /* CoreDataUpdateOps.swift */; };
@@ -30,6 +31,7 @@
 		5EB08C5F23D91CE2005C6A73 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C5823D91CE1005C6A73 /* QuestionModel.swift */; };
 		5EB08C6123D97683005C6A73 /* QuestionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C6023D97682005C6A73 /* QuestionParser.swift */; };
 		5EB08C6323D981BD005C6A73 /* UpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */; };
+		5EC81A8323EA7BBE0032101E /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC81A8223EA7BBE0032101E /* K.swift */; };
 		5EE84CAA23CA50A200BA1627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CA923CA50A200BA1627 /* AppDelegate.swift */; };
 		5EE84CAC23CA50A200BA1627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */; };
 		5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE84CAD23CA50A200BA1627 /* SearchViewController.swift */; };
@@ -52,8 +54,6 @@
 		5EE9DEBF23D13F8B00D7FAF8 /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9DEBE23D13F8B00D7FAF8 /* answers.json */; };
 		5EEBB07323DE561100CFB96C /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEBB07223DE561100CFB96C /* QuestionData.swift */; };
 		5EEBB07523DE88A200CFB96C /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEBB07423DE88A200CFB96C /* NewPostViewController.swift */; };
-		78E3348356B0249D30A1393F /* Pods_StackOverflowProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F652C19E2D1B192448EF548 /* Pods_StackOverflowProjectTests.framework */; };
-		EB529E82E6214AABB01EB753 /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28138F9BE041760D7C50DDCA /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,13 +81,14 @@
 		5E4CFA8623E29EC100800E8C /* QuestionDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailView.swift; sourceTree = "<group>"; };
 		5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E76EA5323CEE22A009E2972 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
-		5E76EA5823CF8088009E2972 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		5E8D423A23E3B3A100D4D6B9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5E8D423C23E3D8B100D4D6B9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		5E8D423E23E3D8BF00D4D6B9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5E9E9A6223E136A300CC767F /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		5E9E9A6423E1545000CC767F /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		5E9E9A6623E1615100CC767F /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
+		5EA20F6923E94860001EC156 /* SearchVMAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVMAppTests.swift; sourceTree = "<group>"; };
+		5EA20F7123E9FC5F001EC156 /* NewPostVMAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVMAppTests.swift; sourceTree = "<group>"; };
+		5EA20F7323E9FC76001EC156 /* QuestionDetailVMAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailVMAppTests.swift; sourceTree = "<group>"; };
 		5EB08C4F23D912E5005C6A73 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		5EB08C5223D91CE1005C6A73 /* CoreDataSaveOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSaveOps.swift; sourceTree = "<group>"; };
 		5EB08C5323D91CE1005C6A73 /* CoreDataUpdateOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUpdateOps.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		5EB08C5823D91CE1005C6A73 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		5EB08C6023D97682005C6A73 /* QuestionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionParser.swift; sourceTree = "<group>"; };
 		5EB08C6223D981BD005C6A73 /* UpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDelegate.swift; sourceTree = "<group>"; };
+		5EC81A8223EA7BBE0032101E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		5EE84CA623CA50A200BA1627 /* StackOverflowProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE84CA923CA50A200BA1627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78E3348356B0249D30A1393F /* Pods_StackOverflowProjectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +151,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB529E82E6214AABB01EB753 /* Pods_StackOverflowProject_StackOverflowProjectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +172,6 @@
 			children = (
 				5E76EA5123CEDEC2009E2972 /* LoginViewController.swift */,
 				5E8D423C23E3D8B100D4D6B9 /* LoginView.swift */,
-				5E8D423E23E3D8BF00D4D6B9 /* LoginViewModel.swift */,
-				5E76EA5823CF8088009E2972 /* Session.swift */,
 			);
 			name = LoginVC;
 			sourceTree = "<group>";
@@ -253,15 +251,16 @@
 				5EB08C5123D91CB5005C6A73 /* CoreData */,
 				5EE9DEB723CFE8F000D7FAF8 /* Parsers */,
 				5EE9DEB223CFB89200D7FAF8 /* Extension */,
+				5E8D424023E3E62200D4D6B9 /* LoginVC */,
+				5E8D424123E3E64E00D4D6B9 /* SearchVC */,
+				5E8D424223E3E67000D4D6B9 /* NewPostVC */,
+				5E8D424323E3E6A500D4D6B9 /* QustionDetailVC */,
 				5EE84CA923CA50A200BA1627 /* AppDelegate.swift */,
 				5EE84CAB23CA50A200BA1627 /* SceneDelegate.swift */,
 				5E76EA5323CEE22A009E2972 /* APIKeys.swift */,
 				5E9E9A6223E136A300CC767F /* URLBuilder.swift */,
 				5EE84CDE23CA820A00BA1627 /* NetworkManager.swift */,
-				5E8D424023E3E62200D4D6B9 /* LoginVC */,
-				5E8D424123E3E64E00D4D6B9 /* SearchVC */,
-				5E8D424223E3E67000D4D6B9 /* NewPostVC */,
-				5E8D424323E3E6A500D4D6B9 /* QustionDetailVC */,
+				5EC81A8223EA7BBE0032101E /* K.swift */,
 				5EE84CB523CA50A400BA1627 /* Assets.xcassets */,
 				5EE84CB723CA50A400BA1627 /* LaunchScreen.storyboard */,
 				5EE84CBA23CA50A400BA1627 /* Info.plist */,
@@ -274,6 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				5EE84CC323CA50A500BA1627 /* StackOverflowProjectTests.swift */,
+				5EA20F6923E94860001EC156 /* SearchVMAppTests.swift */,
+				5EA20F7123E9FC5F001EC156 /* NewPostVMAppTests.swift */,
+				5EA20F7323E9FC76001EC156 /* QuestionDetailVMAppTests.swift */,
 				5EE84CE423CA941700BA1627 /* search.json */,
 				5EE9DEB323CFE83900D7FAF8 /* question.json */,
 				5EE9DEBE23D13F8B00D7FAF8 /* answers.json */,
@@ -470,17 +472,16 @@
 				5EB08C5B23D91CE2005C6A73 /* CoreDataDeleteOps.swift in Sources */,
 				5EB08C5023D912E5005C6A73 /* AnswerTableViewCell.swift in Sources */,
 				5EEBB07323DE561100CFB96C /* QuestionData.swift in Sources */,
-				5E76EA5923CF8088009E2972 /* Session.swift in Sources */,
 				5EE9DEB923CFF11100D7FAF8 /* QuestionTableViewCell.swift in Sources */,
 				5E9E9A6323E136A300CC767F /* URLBuilder.swift in Sources */,
 				5EE84CE323CA921C00BA1627 /* SearchParser.swift in Sources */,
 				5EB08C6123D97683005C6A73 /* QuestionParser.swift in Sources */,
-				5E8D423F23E3D8BF00D4D6B9 /* LoginViewModel.swift in Sources */,
 				5EE84CAE23CA50A200BA1627 /* SearchViewController.swift in Sources */,
 				5E4CFA7F23E2696E00800E8C /* SearchView.swift in Sources */,
 				5EB08C5D23D91CE2005C6A73 /* CoreDataFetchOps.swift in Sources */,
 				5EB08C5C23D91CE2005C6A73 /* CoreDataManager.swift in Sources */,
 				5EE84CE123CA905D00BA1627 /* SearchData.swift in Sources */,
+				5EC81A8323EA7BBE0032101E /* K.swift in Sources */,
 				5E4CFA8723E29EC100800E8C /* QuestionDetailView.swift in Sources */,
 				5E4CFA8523E29DB000800E8C /* QuestionDetailViewModel.swift in Sources */,
 				5E8D423D23E3D8B100D4D6B9 /* LoginView.swift in Sources */,
@@ -512,7 +513,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA20F6A23E94860001EC156 /* SearchVMAppTests.swift in Sources */,
+				5EA20F7223E9FC5F001EC156 /* NewPostVMAppTests.swift in Sources */,
 				5EE84CC423CA50A500BA1627 /* StackOverflowProjectTests.swift in Sources */,
+				5EA20F7423E9FC76001EC156 /* QuestionDetailVMAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

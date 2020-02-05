@@ -28,7 +28,7 @@
 - [ ] Should support dark mode and light mode.
 
 ### Extra Credit :
-- [ ] Huge bonus for fully programmatic project.
+- [X] Huge bonus for fully programmatic project.
 - [ ] Should be able to look at favorite questions on Apple Watch. Perfect iPadOS and MacOS UI.
 - [ ] At least 1 UI test.
 - [ ] Could contain animations.

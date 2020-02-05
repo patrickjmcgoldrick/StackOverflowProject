@@ -107,11 +107,15 @@ class URLBuilder {
 
     // MARK: Authorized Params Helper
     private func authGetParams() -> String {
-        return "key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
+        
+        let accessToken = UserDefaults.standard.string(forKey: K.Key.accessToken) ?? ""
+        return "key=\(APIKeys.StackOverflow.key)&access_token=\(accessToken)"
     }
     
     func authPostParams() -> String {
-        return "site=stackoverflow&filter=!FnhX5sXiIs.YeksPCkGy9NDGT6&key=\(APIKeys.StackOverflow.key)&access_token=\(Session.shared.accessToken)"
+        
+        let accessToken = UserDefaults.standard.string(forKey: K.Key.accessToken) ?? ""
+        return "site=stackoverflow&filter=!FnhX5sXiIs.YeksPCkGy9NDGT6&key=\(APIKeys.StackOverflow.key)&access_token=\(accessToken)"
     }
     
     func newPostParams(title: String, body: String) -> String? {

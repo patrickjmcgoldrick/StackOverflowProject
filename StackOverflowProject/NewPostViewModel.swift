@@ -21,6 +21,7 @@ class NewPostViewModel {
             }
         } else {
             // deal with errrors
+            updatedPreview()
         }
     }
     
@@ -50,9 +51,8 @@ class NewPostViewModel {
             questionParser.parse(data: data) { (questionItems) in
                 if questionItems.items.count > 0 {
                     self.previewQuestion = questionItems.items[0]
-                    
-                    questionCreated()
                 }
+                questionCreated()
             }
         }
     }
