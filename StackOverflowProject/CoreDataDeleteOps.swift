@@ -28,7 +28,7 @@ class CoreDataDeleteOps {
         
         // find related answers, and delete them
         let fetchRequest: NSFetchRequest<Answer> = Answer.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "question_id = %d", questionId)
+        fetchRequest.predicate = NSPredicate(format: "question_id == %ld", questionId)
         let answers = coreDataManager.fetchObjects(fetchRequest: fetchRequest, context: context)
         if answers.count != 0 {
             coreDataManager.batchDelete(objects: answers, context: context)
@@ -36,10 +36,10 @@ class CoreDataDeleteOps {
         
         // find the question and delete it.
         let questionFetchRequest: NSFetchRequest<Question> = Question.fetchRequest()
-        questionFetchRequest.predicate = NSPredicate(format: "question_id = %d", questionId)
-        let question = coreDataManager.fetchObjects(fetchRequest: fetchRequest, context: context)
-        if question.count != 0 {
-            coreDataManager.batchDelete(objects: question, context: context)
+        questionFetchRequest.predicate = NSPredicate(format: "question_id == %ld", questionId)
+        let questions = coreDataManager.fetchObjects(fetchRequest: questionFetchRequest, context: context)
+        if questions.count != 0 {
+            coreDataManager.batchDelete(objects: questions, context: context)
         }
     }
 }

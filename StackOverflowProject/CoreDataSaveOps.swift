@@ -15,27 +15,31 @@ class CoreDataSaveOps {
     
     private init() {}
     
-    func saveQuestion(questionObject: QuestionModel) {
+    func saveQuestion(question: QuestionData) {
         
         let questionManagedObject = Question(context: context)
-        questionManagedObject.question_id = questionObject.question_id
-        questionManagedObject.votedUp = questionObject.votedUp
-        questionManagedObject.votedDown = questionObject.votedDown
-        questionManagedObject.score = questionObject.score
-        questionManagedObject.body = questionObject.body
+        questionManagedObject.question_id = Int32(question.question_id)
+        questionManagedObject.votedUp = question.upvoted
+        questionManagedObject.votedDown = question.downvoted
+        questionManagedObject.score = Int32(question.score)
+        questionManagedObject.title = question.title
+        questionManagedObject.body = question.body
         
         coreDataManager.saveContext(context: context)
     }
-    func saveAnswer(answerObject: AnswerModel) {
+    func saveAnswers(answers: [AnswerData]) {
         
-        let answerManagedObject = Answer(context: context)
-        answerManagedObject.question_id = answerObject.question_id
-        answerManagedObject.answer_id = answerObject.answer_id
-        answerManagedObject.votedUp = answerObject.votedUp
-        answerManagedObject.votedDown = answerObject.votedDown
-        answerManagedObject.score = answerObject.score
-        answerManagedObject.body = answerObject.body
-
+        var answerObjects = [Answer]()
+        for answer in answers {
+            let answerManagedObject = Answer(context: context)
+            answerManagedObject.question_id = Int32(answer.question_id)
+            answerManagedObject.answer_id = Int32(answer.answer_id)
+            answerManagedObject.votedUp = answer.upvoted
+            answerManagedObject.votedDown = answer.downvoted
+            answerManagedObject.score = Int32(answer.score)
+            answerManagedObject.body = answer.body
+            answerObjects.append(answerManagedObject)
+        }
         coreDataManager.saveContext(context: context)
     }
 }

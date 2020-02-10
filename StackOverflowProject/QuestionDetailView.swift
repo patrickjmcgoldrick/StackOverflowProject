@@ -80,10 +80,8 @@ extension QuestionDetailView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            print("LOOK for question")
             return getQuestionCell(indexPath: indexPath)
         } else {
-            print("LOOK for answer")
             return getAnswerCell(indexPath: indexPath)
         }
     }
@@ -109,9 +107,9 @@ extension QuestionDetailView: UITableViewDataSource {
             cell.btnUpVote.isHighlighted = false
         }
         if post.favorited {
-            cell.btnUpVote.isHighlighted = true
+            cell.btnFavorited.isHighlighted = true
         } else {
-            cell.btnUpVote.isHighlighted = false
+            cell.btnFavorited.isHighlighted = false
         }
         return cell
     }

@@ -13,5 +13,6 @@ struct QuestionModel {
     var votedUp: Bool
     var votedDown: Bool
     var score: Int32
+    var title: String
     var body: String
 }

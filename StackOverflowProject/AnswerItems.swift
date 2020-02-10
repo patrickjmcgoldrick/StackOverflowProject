@@ -16,6 +16,7 @@ struct AnswerItems: Codable {
 }
 
 struct AnswerData: Codable {
+    var question_id: Int
     var answer_id: Int
     var is_accepted: Bool
     var creation_date: Int

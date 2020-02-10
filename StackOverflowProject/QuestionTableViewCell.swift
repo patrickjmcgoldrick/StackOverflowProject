@@ -46,7 +46,6 @@ class QuestionTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(imageLiteralResourceName: "star_empty"), for: .normal)
         button.setImage(UIImage(imageLiteralResourceName: "star"), for: .highlighted)
-
         return button
     }()
     
@@ -70,6 +69,10 @@ class QuestionTableViewCell: UITableViewCell {
         addSubview(lblBody)
 
         
+        btnUpVote.addTarget(self, action: #selector(btnActionQuestionUp(_:)), for: .touchUpInside)
+        btnDownVote.addTarget(self, action: #selector(btnActionQuestionDown(_:)), for: .touchUpInside)
+        btnFavorited.addTarget(self, action: #selector(btnActionFavorite(_:)), for: .touchUpInside)
+
         lblBody.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
         lblBody.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
         lblBody.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true

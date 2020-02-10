@@ -49,7 +49,10 @@ class QuestionDetailViewModel {
             let questionParser = QuestionParser()
             questionParser.parse(data: data) { (questionItems) in
                 if questionItems.items.count > 0 {
+                    // update local data
                     self.question = questionItems.items[0]
+                    // update database, if necessary
+                    self.updateFavoritedDataStore(urlString: urlString)
                     questionUpdated()
                 }
             }
@@ -70,6 +73,28 @@ class QuestionDetailViewModel {
                     self.answers[row] = answerItems.items[0]
                     answerUpdated()
                 }
+            }
+        }
+    }
+    
+    // make sure we are updating favorite,
+    // if we are, save ore delete datastore records
+    private func updateFavoritedDataStore(urlString: String) {
+        
+        // favorited status changed?
+        if urlString.contains("favorite") {
+            guard let question = question else { return }
+            
+            // undo - We remove records from DB
+            if !urlString.contains("favorite/undo") {
+                let db = CoreDataSaveOps.shared
+                db.saveQuestion(question: question)
+                db.saveAnswers(answers: answers)
+            } else {
+                // otherwise, we create records in the DB
+                let db = CoreDataDeleteOps.shared
+                let questionId = Int32(question.question_id)
+                db.deleteBy(questionId: questionId)
             }
         }
     }
